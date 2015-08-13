@@ -7,5 +7,13 @@
 //
 
 class WeatherObject: NSObject {
-
+    var currentTemp:Int?
+    var highTemp:Int?
+    var lowTemp:Int?
+    init(currentTemp:Int,highTemp:Int,lowTemp:Int) {
+        super.init()
+        self.currentTemp = currentTemp
+        self.highTemp = highTemp
+        self.lowTemp = lowTemp
+    }
 }

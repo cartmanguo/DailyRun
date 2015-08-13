@@ -21,9 +21,21 @@ class ViewController: UIViewController {
         flipNumberView.imageBundleName = "JDFlipNumberView"
         flipNumberView.value = 0
         flipNumberView.animateToValue(235, duration: 2.5)
+        getWeather()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    func getWeather()
+    {
+        WeatherReporter.requestForWeatherForCity("成都", success: {(data:WeatherObject) in
+            dispatch_async(dispatch_get_main_queue(), {() in
+                self.tempLabel.text = String(format: "%d", data.currentTemp!)+"℃"
+                self.todayTempLabel.text = "今天"+String(data.highTemp!) + " / " + String(data.lowTemp!)
+                })
+            
+             }, failed: {(err) in
+        })
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -22,11 +22,16 @@
 		25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906B1B7C473300CA4F33 /* JDFlipNumberView.m */; };
 		25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906D1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m */; };
 		25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */; };
-		25D9907F1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */; };
 		25D990811B7C63D200CA4F33 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990801B7C63D200CA4F33 /* Realm.framework */; };
 		25D990831B7C640500CA4F33 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990821B7C640500CA4F33 /* RLMSupport.swift */; };
 		25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990841B7C6A3500CA4F33 /* libc++.dylib */; };
 		25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990861B7C6A9900CA4F33 /* WeatherObject.swift */; };
+		4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */; };
+		4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D15941B7CE1BB006A6594 /* Urls.swift */; };
+		4C6D159B1B7CE322006A6594 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15971B7CE322006A6594 /* Info-iOS.plist */; };
+		4C6D159C1B7CE322006A6594 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15981B7CE322006A6594 /* Info-OSX.plist */; };
+		4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */; };
+		4C6D159F1B7CEA62006A6594 /* JSONKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +72,17 @@
 		25D9906E1B7C473300CA4F33 /* UIView+JDFlipImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JDFlipImageView.h"; sourceTree = "<group>"; };
 		25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JDFlipImageView.m"; sourceTree = "<group>"; };
 		25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyRun_Bridging_Header.h; sourceTree = "<group>"; };
-		25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
 		25D990801B7C63D200CA4F33 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		25D990821B7C640500CA4F33 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		25D990841B7C6A3500CA4F33 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		25D990861B7C6A9900CA4F33 /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+		4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherReporter.swift; path = ../WeatherReporter.swift; sourceTree = "<group>"; };
+		4C6D15941B7CE1BB006A6594 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Urls.swift; path = ../Urls.swift; sourceTree = "<group>"; };
+		4C6D15971B7CE322006A6594 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		4C6D15981B7CE322006A6594 /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
+		4C6D15991B7CE322006A6594 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +126,12 @@
 		25D9903A1B7C3FDE00CA4F33 /* DailyRun */ = {
 			isa = PBXGroup;
 			children = (
-				25D990881B7C6AB400CA4F33 /* Data */,
+				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
+				4C6D15941B7CE1BB006A6594 /* Urls.swift */,
+				4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */,
 				25D990841B7C6A3500CA4F33 /* libc++.dylib */,
 				25D990801B7C63D200CA4F33 /* Realm.framework */,
+				25D990881B7C6AB400CA4F33 /* Data */,
 				25D9905F1B7C473300CA4F33 /* Vendor */,
 				25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */,
 				25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */,
@@ -125,7 +139,6 @@
 				25D990411B7C3FDE00CA4F33 /* Main.storyboard */,
 				25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */,
 				25D990821B7C640500CA4F33 /* RLMSupport.swift */,
-				25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */,
 				25D990441B7C3FDE00CA4F33 /* Images.xcassets */,
 				25D990461B7C3FDE00CA4F33 /* LaunchScreen.xib */,
 				25D9903B1B7C3FDE00CA4F33 /* Supporting Files */,
@@ -161,6 +174,7 @@
 		25D9905F1B7C473300CA4F33 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4C6D15961B7CE322006A6594 /* SwiftyJson */,
 				25D990601B7C473300CA4F33 /* JDFlipNumberView */,
 			);
 			path = Vendor;
@@ -194,6 +208,17 @@
 				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		4C6D15961B7CE322006A6594 /* SwiftyJson */ = {
+			isa = PBXGroup;
+			children = (
+				4C6D15971B7CE322006A6594 /* Info-iOS.plist */,
+				4C6D15981B7CE322006A6594 /* Info-OSX.plist */,
+				4C6D15991B7CE322006A6594 /* SwiftyJSON.h */,
+				4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +270,7 @@
 				TargetAttributes = {
 					25D990371B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = HZ59NGURJ9;
+						DevelopmentTeam = V7L6S57KTH;
 					};
 					25D9904C1B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
@@ -279,9 +304,10 @@
 			files = (
 				25D990741B7C473300CA4F33 /* JDFlipNumberView.bundle in Resources */,
 				25D990431B7C3FDE00CA4F33 /* Main.storyboard in Resources */,
-				25D9907F1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle in Resources */,
+				4C6D159B1B7CE322006A6594 /* Info-iOS.plist in Resources */,
 				25D990481B7C3FDE00CA4F33 /* LaunchScreen.xib in Resources */,
 				25D990451B7C3FDE00CA4F33 /* Images.xcassets in Resources */,
+				4C6D159C1B7CE322006A6594 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +328,10 @@
 				25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */,
 				25D990831B7C640500CA4F33 /* RLMSupport.swift in Sources */,
 				25D990731B7C473300CA4F33 /* JDFlipNumberDigitView.m in Sources */,
+				4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */,
 				25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */,
+				4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */,
+				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
 				25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */,
 				25D990711B7C473300CA4F33 /* JDFlipClockView.m in Sources */,
@@ -311,6 +340,7 @@
 				25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */,
 				25D990701B7C473300CA4F33 /* JDDateCountdownFlipView.m in Sources */,
 				25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */,
+				4C6D159F1B7CEA62006A6594 /* JSONKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +548,7 @@
 				25D990591B7C3FDE00CA4F33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25D9905A1B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRunTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +557,7 @@
 				25D9905C1B7C3FDE00CA4F33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
