@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */; };
+		25D990401B7C3FDE00CA4F33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */; };
+		25D990431B7C3FDE00CA4F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D990411B7C3FDE00CA4F33 /* Main.storyboard */; };
+		25D990451B7C3FDE00CA4F33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25D990441B7C3FDE00CA4F33 /* Images.xcassets */; };
+		25D990481B7C3FDE00CA4F33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D990461B7C3FDE00CA4F33 /* LaunchScreen.xib */; };
+		25D990541B7C3FDE00CA4F33 /* DailyRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990531B7C3FDE00CA4F33 /* DailyRunTests.swift */; };
+		25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */; };
+		25D990701B7C473300CA4F33 /* JDDateCountdownFlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D990621B7C473300CA4F33 /* JDDateCountdownFlipView.m */; };
+		25D990711B7C473300CA4F33 /* JDFlipClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D990641B7C473300CA4F33 /* JDFlipClockView.m */; };
+		25D990721B7C473300CA4F33 /* JDFlipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D990661B7C473300CA4F33 /* JDFlipImageView.m */; };
+		25D990731B7C473300CA4F33 /* JDFlipNumberDigitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D990681B7C473300CA4F33 /* JDFlipNumberDigitView.m */; };
+		25D990741B7C473300CA4F33 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 25D990691B7C473300CA4F33 /* JDFlipNumberView.bundle */; };
+		25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906B1B7C473300CA4F33 /* JDFlipNumberView.m */; };
+		25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906D1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m */; };
+		25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */; };
+		25D9907F1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */; };
+		25D990811B7C63D200CA4F33 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990801B7C63D200CA4F33 /* Realm.framework */; };
+		25D990831B7C640500CA4F33 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990821B7C640500CA4F33 /* RLMSupport.swift */; };
+		25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990841B7C6A3500CA4F33 /* libc++.dylib */; };
+		25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990861B7C6A9900CA4F33 /* WeatherObject.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25D9904E1B7C3FDE00CA4F33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25D990301B7C3FDE00CA4F33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25D990371B7C3FDE00CA4F33;
+			remoteInfo = DailyRun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		25D990381B7C3FDE00CA4F33 /* DailyRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D9903C1B7C3FDE00CA4F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25D990421B7C3FDE00CA4F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25D990441B7C3FDE00CA4F33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		25D990471B7C3FDE00CA4F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		25D9904D1B7C3FDE00CA4F33 /* DailyRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D990521B7C3FDE00CA4F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D990531B7C3FDE00CA4F33 /* DailyRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRunTests.swift; sourceTree = "<group>"; };
+		25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		25D990611B7C473300CA4F33 /* JDDateCountdownFlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDDateCountdownFlipView.h; sourceTree = "<group>"; };
+		25D990621B7C473300CA4F33 /* JDDateCountdownFlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDDateCountdownFlipView.m; sourceTree = "<group>"; };
+		25D990631B7C473300CA4F33 /* JDFlipClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipClockView.h; sourceTree = "<group>"; };
+		25D990641B7C473300CA4F33 /* JDFlipClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipClockView.m; sourceTree = "<group>"; };
+		25D990651B7C473300CA4F33 /* JDFlipImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipImageView.h; sourceTree = "<group>"; };
+		25D990661B7C473300CA4F33 /* JDFlipImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipImageView.m; sourceTree = "<group>"; };
+		25D990671B7C473300CA4F33 /* JDFlipNumberDigitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipNumberDigitView.h; sourceTree = "<group>"; };
+		25D990681B7C473300CA4F33 /* JDFlipNumberDigitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipNumberDigitView.m; sourceTree = "<group>"; };
+		25D990691B7C473300CA4F33 /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
+		25D9906A1B7C473300CA4F33 /* JDFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipNumberView.h; sourceTree = "<group>"; };
+		25D9906B1B7C473300CA4F33 /* JDFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipNumberView.m; sourceTree = "<group>"; };
+		25D9906C1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipNumberViewImageFactory.h; sourceTree = "<group>"; };
+		25D9906D1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFlipNumberViewImageFactory.m; sourceTree = "<group>"; };
+		25D9906E1B7C473300CA4F33 /* UIView+JDFlipImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JDFlipImageView.h"; sourceTree = "<group>"; };
+		25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JDFlipImageView.m"; sourceTree = "<group>"; };
+		25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyRun_Bridging_Header.h; sourceTree = "<group>"; };
+		25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
+		25D990801B7C63D200CA4F33 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		25D990821B7C640500CA4F33 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		25D990841B7C6A3500CA4F33 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		25D990861B7C6A9900CA4F33 /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25D990351B7C3FDE00CA4F33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */,
+				25D990811B7C63D200CA4F33 /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25D9904A1B7C3FDE00CA4F33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25D9902F1B7C3FDE00CA4F33 = {
+			isa = PBXGroup;
+			children = (
+				25D9903A1B7C3FDE00CA4F33 /* DailyRun */,
+				25D990501B7C3FDE00CA4F33 /* DailyRunTests */,
+				25D990391B7C3FDE00CA4F33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25D990391B7C3FDE00CA4F33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25D990381B7C3FDE00CA4F33 /* DailyRun.app */,
+				25D9904D1B7C3FDE00CA4F33 /* DailyRunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25D9903A1B7C3FDE00CA4F33 /* DailyRun */ = {
+			isa = PBXGroup;
+			children = (
+				25D990881B7C6AB400CA4F33 /* Data */,
+				25D990841B7C6A3500CA4F33 /* libc++.dylib */,
+				25D990801B7C63D200CA4F33 /* Realm.framework */,
+				25D9905F1B7C473300CA4F33 /* Vendor */,
+				25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */,
+				25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */,
+				25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */,
+				25D990411B7C3FDE00CA4F33 /* Main.storyboard */,
+				25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */,
+				25D990821B7C640500CA4F33 /* RLMSupport.swift */,
+				25D9907E1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle */,
+				25D990441B7C3FDE00CA4F33 /* Images.xcassets */,
+				25D990461B7C3FDE00CA4F33 /* LaunchScreen.xib */,
+				25D9903B1B7C3FDE00CA4F33 /* Supporting Files */,
+			);
+			path = DailyRun;
+			sourceTree = "<group>";
+		};
+		25D9903B1B7C3FDE00CA4F33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25D9903C1B7C3FDE00CA4F33 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25D990501B7C3FDE00CA4F33 /* DailyRunTests */ = {
+			isa = PBXGroup;
+			children = (
+				25D990531B7C3FDE00CA4F33 /* DailyRunTests.swift */,
+				25D990511B7C3FDE00CA4F33 /* Supporting Files */,
+			);
+			path = DailyRunTests;
+			sourceTree = "<group>";
+		};
+		25D990511B7C3FDE00CA4F33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25D990521B7C3FDE00CA4F33 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25D9905F1B7C473300CA4F33 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				25D990601B7C473300CA4F33 /* JDFlipNumberView */,
+			);
+			path = Vendor;
+			sourceTree = SOURCE_ROOT;
+		};
+		25D990601B7C473300CA4F33 /* JDFlipNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				25D990611B7C473300CA4F33 /* JDDateCountdownFlipView.h */,
+				25D990621B7C473300CA4F33 /* JDDateCountdownFlipView.m */,
+				25D990631B7C473300CA4F33 /* JDFlipClockView.h */,
+				25D990641B7C473300CA4F33 /* JDFlipClockView.m */,
+				25D990651B7C473300CA4F33 /* JDFlipImageView.h */,
+				25D990661B7C473300CA4F33 /* JDFlipImageView.m */,
+				25D990671B7C473300CA4F33 /* JDFlipNumberDigitView.h */,
+				25D990681B7C473300CA4F33 /* JDFlipNumberDigitView.m */,
+				25D990691B7C473300CA4F33 /* JDFlipNumberView.bundle */,
+				25D9906A1B7C473300CA4F33 /* JDFlipNumberView.h */,
+				25D9906B1B7C473300CA4F33 /* JDFlipNumberView.m */,
+				25D9906C1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.h */,
+				25D9906D1B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m */,
+				25D9906E1B7C473300CA4F33 /* UIView+JDFlipImageView.h */,
+				25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */,
+			);
+			path = JDFlipNumberView;
+			sourceTree = "<group>";
+		};
+		25D990881B7C6AB400CA4F33 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25D990371B7C3FDE00CA4F33 /* DailyRun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25D990571B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRun" */;
+			buildPhases = (
+				25D990341B7C3FDE00CA4F33 /* Sources */,
+				25D990351B7C3FDE00CA4F33 /* Frameworks */,
+				25D990361B7C3FDE00CA4F33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyRun;
+			productName = DailyRun;
+			productReference = 25D990381B7C3FDE00CA4F33 /* DailyRun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25D9904C1B7C3FDE00CA4F33 /* DailyRunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25D9905A1B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRunTests" */;
+			buildPhases = (
+				25D990491B7C3FDE00CA4F33 /* Sources */,
+				25D9904A1B7C3FDE00CA4F33 /* Frameworks */,
+				25D9904B1B7C3FDE00CA4F33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25D9904F1B7C3FDE00CA4F33 /* PBXTargetDependency */,
+			);
+			name = DailyRunTests;
+			productName = DailyRunTests;
+			productReference = 25D9904D1B7C3FDE00CA4F33 /* DailyRunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25D990301B7C3FDE00CA4F33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = randy;
+				TargetAttributes = {
+					25D990371B7C3FDE00CA4F33 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = HZ59NGURJ9;
+					};
+					25D9904C1B7C3FDE00CA4F33 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 25D990371B7C3FDE00CA4F33;
+					};
+				};
+			};
+			buildConfigurationList = 25D990331B7C3FDE00CA4F33 /* Build configuration list for PBXProject "DailyRun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25D9902F1B7C3FDE00CA4F33;
+			productRefGroup = 25D990391B7C3FDE00CA4F33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25D990371B7C3FDE00CA4F33 /* DailyRun */,
+				25D9904C1B7C3FDE00CA4F33 /* DailyRunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25D990361B7C3FDE00CA4F33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D990741B7C473300CA4F33 /* JDFlipNumberView.bundle in Resources */,
+				25D990431B7C3FDE00CA4F33 /* Main.storyboard in Resources */,
+				25D9907F1B7C4C5C00CA4F33 /* JDFlipNumberView.bundle in Resources */,
+				25D990481B7C3FDE00CA4F33 /* LaunchScreen.xib in Resources */,
+				25D990451B7C3FDE00CA4F33 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25D9904B1B7C3FDE00CA4F33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25D990341B7C3FDE00CA4F33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */,
+				25D990831B7C640500CA4F33 /* RLMSupport.swift in Sources */,
+				25D990731B7C473300CA4F33 /* JDFlipNumberDigitView.m in Sources */,
+				25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */,
+				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
+				25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */,
+				25D990711B7C473300CA4F33 /* JDFlipClockView.m in Sources */,
+				25D990401B7C3FDE00CA4F33 /* ViewController.swift in Sources */,
+				25D990721B7C473300CA4F33 /* JDFlipImageView.m in Sources */,
+				25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */,
+				25D990701B7C473300CA4F33 /* JDDateCountdownFlipView.m in Sources */,
+				25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25D990491B7C3FDE00CA4F33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D990541B7C3FDE00CA4F33 /* DailyRunTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25D9904F1B7C3FDE00CA4F33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25D990371B7C3FDE00CA4F33 /* DailyRun */;
+			targetProxy = 25D9904E1B7C3FDE00CA4F33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25D990411B7C3FDE00CA4F33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25D990421B7C3FDE00CA4F33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25D990461B7C3FDE00CA4F33 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25D990471B7C3FDE00CA4F33 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25D990551B7C3FDE00CA4F33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25D990561B7C3FDE00CA4F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25D990581B7C3FDE00CA4F33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DailyRun",
+				);
+				INFOPLIST_FILE = DailyRun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DailyRun/DailyRun_Bridging_Header.h";
+			};
+			name = Debug;
+		};
+		25D990591B7C3FDE00CA4F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DailyRun",
+				);
+				INFOPLIST_FILE = DailyRun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DailyRun/DailyRun_Bridging_Header.h";
+			};
+			name = Release;
+		};
+		25D9905B1B7C3FDE00CA4F33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DailyRunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyRun.app/DailyRun";
+			};
+			name = Debug;
+		};
+		25D9905C1B7C3FDE00CA4F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DailyRunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyRun.app/DailyRun";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25D990331B7C3FDE00CA4F33 /* Build configuration list for PBXProject "DailyRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25D990551B7C3FDE00CA4F33 /* Debug */,
+				25D990561B7C3FDE00CA4F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25D990571B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25D990581B7C3FDE00CA4F33 /* Debug */,
+				25D990591B7C3FDE00CA4F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		25D9905A1B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25D9905B1B7C3FDE00CA4F33 /* Debug */,
+				25D9905C1B7C3FDE00CA4F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25D990301B7C3FDE00CA4F33 /* Project object */;
+}
