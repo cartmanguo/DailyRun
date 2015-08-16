@@ -8,4 +8,4 @@
 
 import Foundation
 var cityCodeBase = "http://apistore.baidu.com/microservice/cityinfo?cityname=%@"
- var weatherUrlBase = "http://api.k780.com:88/?app=weather.today&weaid=%@&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json"
+ var weatherUrlBase = "http://api.k780.com:88/?app=weather.today&weaid=%@&appkey=14980&sign=af6d1302c775b4f575745080ef83b05f&format=json"

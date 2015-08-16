@@ -10,3 +10,4 @@ import Foundation
 let currentTempKey = "temp_curr"
 let lowTempKey = "temp_low"
 let highTempKey = "temp_high"
+let weatherIDKey = "weatid"
