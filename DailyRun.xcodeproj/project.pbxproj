@@ -24,6 +24,7 @@
 		25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */; };
 		25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990841B7C6A3500CA4F33 /* libc++.dylib */; };
 		25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990861B7C6A9900CA4F33 /* WeatherObject.swift */; };
+		2837453318D76CFB9D25847B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240A443DDAA6DE0AF43E815 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179C1B80655E0048E5A4 /* RunViewController.swift */; };
 		4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */; };
 		4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */; };
@@ -32,6 +33,16 @@
 		4C6D159C1B7CE322006A6594 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15981B7CE322006A6594 /* Info-OSX.plist */; };
 		4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */; };
 		4C6D159F1B7CEA62006A6594 /* JSONKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */; };
+		4C7D8B5C1B820ED70025663C /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B531B820ED70025663C /* Locations.swift */; };
+		4C7D8B5D1B820ED70025663C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B541B820ED70025663C /* MainViewController.swift */; };
+		4C7D8B5E1B820ED70025663C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B551B820ED70025663C /* MenuViewController.swift */; };
+		4C7D8B5F1B820ED70025663C /* NSDate+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B561B820ED70025663C /* NSDate+String.swift */; };
+		4C7D8B601B820ED70025663C /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B571B820ED70025663C /* RecordsViewController.swift */; };
+		4C7D8B611B820ED70025663C /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B581B820ED70025663C /* RunData.swift */; };
+		4C7D8B621B820ED70025663C /* RunDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B591B820ED70025663C /* RunDataCell.swift */; };
+		4C7D8B631B820ED70025663C /* RunDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B5A1B820ED70025663C /* RunDataManager.swift */; };
+		4C7D8B641B820ED70025663C /* String+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B5B1B820ED70025663C /* String+Time.swift */; };
+		4C7D8B951B824C7D0025663C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D8B941B824C7D0025663C /* MenuCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +94,19 @@
 		4C6D15991B7CE322006A6594 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONKeys.swift; sourceTree = "<group>"; };
+		4C7D8B531B820ED70025663C /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		4C7D8B541B820ED70025663C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4C7D8B551B820ED70025663C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4C7D8B561B820ED70025663C /* NSDate+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+String.swift"; path = "DailyRun/NSDate+String.swift"; sourceTree = "<group>"; };
+		4C7D8B571B820ED70025663C /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		4C7D8B581B820ED70025663C /* RunData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
+		4C7D8B591B820ED70025663C /* RunDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataCell.swift; sourceTree = "<group>"; };
+		4C7D8B5A1B820ED70025663C /* RunDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataManager.swift; sourceTree = "<group>"; };
+		4C7D8B5B1B820ED70025663C /* String+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Time.swift"; path = "DailyRun/String+Time.swift"; sourceTree = "<group>"; };
+		4C7D8B941B824C7D0025663C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		5240A443DDAA6DE0AF43E815 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938F5CC890BC018851830495 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9E054DEE4D4A0252D63F79BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */,
+				2837453318D76CFB9D25847B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,9 +132,12 @@
 		25D9902F1B7C3FDE00CA4F33 = {
 			isa = PBXGroup;
 			children = (
+				4C7D8B651B820F110025663C /* Extensions */,
 				25D9903A1B7C3FDE00CA4F33 /* DailyRun */,
 				25D990501B7C3FDE00CA4F33 /* DailyRunTests */,
 				25D990391B7C3FDE00CA4F33 /* Products */,
+				8618E59DCD0BC80B721F47A2 /* Pods */,
+				6C8746A11FEA7383136F5D16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
+				4C7D8B5A1B820ED70025663C /* RunDataManager.swift */,
 				4C6D15941B7CE1BB006A6594 /* Urls.swift */,
 				4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */,
 				25D990841B7C6A3500CA4F33 /* libc++.dylib */,
@@ -133,6 +162,11 @@
 				25D9905F1B7C473300CA4F33 /* Vendor */,
 				25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */,
 				25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */,
+				4C7D8B541B820ED70025663C /* MainViewController.swift */,
+				4C7D8B551B820ED70025663C /* MenuViewController.swift */,
+				4C7D8B941B824C7D0025663C /* MenuCell.swift */,
+				4C7D8B571B820ED70025663C /* RecordsViewController.swift */,
+				4C7D8B591B820ED70025663C /* RunDataCell.swift */,
 				25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */,
 				4C08179C1B80655E0048E5A4 /* RunViewController.swift */,
 				4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */,
@@ -205,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
+				4C7D8B531B820ED70025663C /* Locations.swift */,
+				4C7D8B581B820ED70025663C /* RunData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -220,6 +256,32 @@
 			path = SwiftyJson;
 			sourceTree = "<group>";
 		};
+		4C7D8B651B820F110025663C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C7D8B561B820ED70025663C /* NSDate+String.swift */,
+				4C7D8B5B1B820ED70025663C /* String+Time.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6C8746A11FEA7383136F5D16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5240A443DDAA6DE0AF43E815 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8618E59DCD0BC80B721F47A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E054DEE4D4A0252D63F79BA /* Pods.debug.xcconfig */,
+				938F5CC890BC018851830495 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,9 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25D990571B7C3FDE00CA4F33 /* Build configuration list for PBXNativeTarget "DailyRun" */;
 			buildPhases = (
+				8BB7F0210C31FBA01B413F50 /* Check Pods Manifest.lock */,
 				25D990341B7C3FDE00CA4F33 /* Sources */,
 				25D990351B7C3FDE00CA4F33 /* Frameworks */,
 				25D990361B7C3FDE00CA4F33 /* Resources */,
+				B4B67086E9E8CAE63DDD9F5D /* Embed Pods Frameworks */,
+				0F492382BD633BCFE027534F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,21 +384,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F492382BD633BCFE027534F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BB7F0210C31FBA01B413F50 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4B67086E9E8CAE63DDD9F5D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		25D990341B7C3FDE00CA4F33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7D8B5C1B820ED70025663C /* Locations.swift in Sources */,
+				4C7D8B601B820ED70025663C /* RecordsViewController.swift in Sources */,
+				4C7D8B951B824C7D0025663C /* MenuCell.swift in Sources */,
 				25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */,
+				4C7D8B621B820ED70025663C /* RunDataCell.swift in Sources */,
 				25D990731B7C473300CA4F33 /* JDFlipNumberDigitView.m in Sources */,
 				4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */,
 				25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */,
+				4C7D8B5D1B820ED70025663C /* MainViewController.swift in Sources */,
+				4C7D8B631B820ED70025663C /* RunDataManager.swift in Sources */,
 				4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */,
 				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
+				4C7D8B611B820ED70025663C /* RunData.swift in Sources */,
 				25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */,
 				4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */,
+				4C7D8B641B820ED70025663C /* String+Time.swift in Sources */,
+				4C7D8B5E1B820ED70025663C /* MenuViewController.swift in Sources */,
 				25D990711B7C473300CA4F33 /* JDFlipClockView.m in Sources */,
+				4C7D8B5F1B820ED70025663C /* NSDate+String.swift in Sources */,
 				25D990401B7C3FDE00CA4F33 /* ViewController.swift in Sources */,
 				25D990721B7C473300CA4F33 /* JDFlipImageView.m in Sources */,
 				25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */,
@@ -465,6 +588,7 @@
 		};
 		25D990581B7C3FDE00CA4F33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E054DEE4D4A0252D63F79BA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -481,6 +605,7 @@
 		};
 		25D990591B7C3FDE00CA4F33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 938F5CC890BC018851830495 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

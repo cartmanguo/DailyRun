@@ -9,7 +9,7 @@
         <!--Daily Run-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="vXZ-lx-hvc" customClass="ViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -189,6 +189,9 @@
                     <navigationItem key="navigationItem" title="Daily Run" id="Nux-ke-NNj">
                         <barButtonItem key="leftBarButtonItem" image="List" id="sXJ-g1-bBL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleMenu:" destination="vXZ-lx-hvc" id="MVl-nc-uYD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -233,7 +236,7 @@
         <!--New Run-->
         <scene sceneID="ATF-jC-BNk">
             <objects>
-                <viewController title="New Run" id="ZrT-xr-4yl" customClass="RunViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Running" title="New Run" id="ZrT-xr-4yl" customClass="RunViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pq9-6i-foc"/>
                         <viewControllerLayoutGuide type="bottom" id="ZF2-f3-ZOu"/>
@@ -280,14 +283,14 @@
                                     <action selector="startPressed:" destination="ZrT-xr-4yl" eventType="touchUpInside" id="qdm-Oe-FlO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1439734594_clock" translatesAutoresizingMaskIntoConstraints="NO" id="AzN-6p-jx6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="AzN-6p-jx6">
                                 <rect key="frame" x="11" y="453" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="2YE-42-lBU"/>
                                     <constraint firstAttribute="height" constant="32" id="ehC-JA-6xm"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-high-speed" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-M2-szq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpeedMeter" translatesAutoresizingMaskIntoConstraints="NO" id="lkJ-M2-szq">
                                 <rect key="frame" x="180" y="453" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="BPp-rk-GAp"/>
@@ -342,39 +345,232 @@
                         <outlet property="signalView" destination="WXk-RV-ai2" id="RIy-4b-jHi"/>
                         <outlet property="startButton" destination="zS6-kb-v3Z" id="b38-6O-CV4"/>
                         <outlet property="timeLabel" destination="gyU-G5-9O4" id="9Qg-Fc-bEb"/>
-                        <segue destination="GlQ-aF-bbj" kind="show" identifier="Detail" id="jfc-Lh-YbP"/>
+                        <segue destination="tDg-yj-NDd" kind="show" identifier="Detail" id="bmu-pM-CUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRg-Wq-Pja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1565" y="343"/>
+            <point key="canvasLocation" x="1642" y="359"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="5vj-id-FwL">
+        <!--跑步详情-->
+        <scene sceneID="cfR-58-yXo">
             <objects>
-                <viewController id="GlQ-aF-bbj" customClass="DetailViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" id="tDg-yj-NDd" customClass="DetailViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AMH-ZR-zpw"/>
-                        <viewControllerLayoutGuide type="bottom" id="eQM-4v-9fL"/>
+                        <viewControllerLayoutGuide type="top" id="D58-Fc-n6W"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jq-k2-uUG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k82-jQ-3DY">
+                    <view key="view" contentMode="scaleToFill" id="xux-ra-ocu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rqW-UU-wCJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="232"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00公里" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-go-szN">
+                                <rect key="frame" x="0.0" y="64" width="184" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="Akz-fZ-dum"/>
+                                    <constraint firstAttribute="height" constant="53" id="N0u-ht-y9o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5w-P5-TZl">
+                                <rect key="frame" x="56" y="303" width="116" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="69W-we-bN8"/>
+                                    <constraint firstAttribute="height" constant="33" id="t8a-ci-DEI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="O5U-ba-CQy">
+                                <rect key="frame" x="11" y="304" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="nrc-rp-pvI"/>
+                                    <constraint firstAttribute="width" constant="32" id="qYl-Kp-cSt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpeedMeter" translatesAutoresizingMaskIntoConstraints="NO" id="lMm-xT-RQi">
+                                <rect key="frame" x="180" y="304" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Nwn-hw-YSx"/>
+                                    <constraint firstAttribute="height" constant="32" id="d68-UN-X0g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配速:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iB-Xj-4KO">
+                                <rect key="frame" x="226" y="303" width="94" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Tge-ko-4mR"/>
+                                    <constraint firstAttribute="width" constant="94" id="ZAP-Vi-bWd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月26日 21:13:45" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-d1-dBW">
+                                <rect key="frame" x="192" y="89" width="128" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="amH-0t-0Gj"/>
+                                    <constraint firstAttribute="width" constant="128" id="oUI-Y3-LlW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天跑完感觉如何?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zL9-MX-bON">
+                                <rect key="frame" x="11" y="344" width="148" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="eSi-Xe-jfs"/>
+                                    <constraint firstAttribute="height" constant="20" id="isU-xX-SrZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="just so so" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-lL-QT9">
+                                <rect key="frame" x="5" y="367" width="310" height="193"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth ">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.60821101639999997" green="0.60821101639999997" blue="0.60821101639999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="tDg-yj-NDd" id="VhJ-Iw-sy0"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g0l-go-szN" firstAttribute="top" secondItem="D58-Fc-n6W" secondAttribute="bottom" id="5Gs-hi-kil"/>
+                            <constraint firstItem="kSg-lL-QT9" firstAttribute="leading" secondItem="xux-ra-ocu" secondAttribute="leading" constant="5" id="5Iq-Uk-l97"/>
+                            <constraint firstItem="g0l-go-szN" firstAttribute="leading" secondItem="xux-ra-ocu" secondAttribute="leading" id="A9V-G6-G3y"/>
+                            <constraint firstItem="2iB-Xj-4KO" firstAttribute="top" secondItem="rqW-UU-wCJ" secondAttribute="bottom" constant="7" id="CsB-25-yMb"/>
+                            <constraint firstItem="O5U-ba-CQy" firstAttribute="top" secondItem="rqW-UU-wCJ" secondAttribute="bottom" constant="8" id="E3Y-lA-CeL"/>
+                            <constraint firstItem="lMm-xT-RQi" firstAttribute="top" secondItem="rqW-UU-wCJ" secondAttribute="bottom" constant="8" id="GCv-v3-LEL"/>
+                            <constraint firstItem="O5U-ba-CQy" firstAttribute="leading" secondItem="xux-ra-ocu" secondAttribute="leading" constant="11" id="HCh-LV-zbH"/>
+                            <constraint firstItem="rqW-UU-wCJ" firstAttribute="leading" secondItem="xux-ra-ocu" secondAttribute="leading" id="Nnu-yb-TLU"/>
+                            <constraint firstItem="7jq-k2-uUG" firstAttribute="top" secondItem="kSg-lL-QT9" secondAttribute="bottom" constant="8" id="OoR-0T-fVK"/>
+                            <constraint firstItem="eUK-d1-dBW" firstAttribute="leading" secondItem="g0l-go-szN" secondAttribute="trailing" constant="8" id="ZEB-uL-ttJ"/>
+                            <constraint firstItem="j5w-P5-TZl" firstAttribute="top" secondItem="rqW-UU-wCJ" secondAttribute="bottom" constant="7" id="ZIR-aM-5vK"/>
+                            <constraint firstItem="rqW-UU-wCJ" firstAttribute="top" secondItem="D58-Fc-n6W" secondAttribute="bottom" id="aBc-Wn-S3x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lMm-xT-RQi" secondAttribute="trailing" constant="92" id="bS4-kK-xW4"/>
+                            <constraint firstItem="j5w-P5-TZl" firstAttribute="leading" secondItem="O5U-ba-CQy" secondAttribute="trailing" constant="13" id="pi9-1l-DzX"/>
+                            <constraint firstItem="zL9-MX-bON" firstAttribute="leading" secondItem="xux-ra-ocu" secondAttribute="leading" constant="11" id="poz-kh-72V"/>
+                            <constraint firstItem="zL9-MX-bON" firstAttribute="top" secondItem="O5U-ba-CQy" secondAttribute="bottom" constant="8" id="qEl-6I-0nt"/>
+                            <constraint firstItem="kSg-lL-QT9" firstAttribute="top" secondItem="zL9-MX-bON" secondAttribute="bottom" constant="3" id="szT-Cz-rtw"/>
+                            <constraint firstAttribute="trailing" secondItem="kSg-lL-QT9" secondAttribute="trailing" constant="5" id="wDT-5w-nVP"/>
+                            <constraint firstAttribute="trailing" secondItem="2iB-Xj-4KO" secondAttribute="trailing" id="xAE-3m-8pv"/>
+                            <constraint firstItem="eUK-d1-dBW" firstAttribute="top" secondItem="D58-Fc-n6W" secondAttribute="bottom" constant="25" id="xEm-lO-Vx2"/>
+                            <constraint firstAttribute="trailing" secondItem="rqW-UU-wCJ" secondAttribute="trailing" id="yqI-hc-3gK"/>
+                            <constraint firstItem="rqW-UU-wCJ" firstAttribute="height" secondItem="xux-ra-ocu" secondAttribute="height" multiplier="0.5" constant="-52" id="yvo-z0-DKh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="跑步详情" id="bfr-rK-1gC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="eUK-d1-dBW" id="bKq-rj-DyK"/>
+                        <outlet property="distanceLabel" destination="g0l-go-szN" id="pQk-E0-P7Z"/>
+                        <outlet property="mapView" destination="rqW-UU-wCJ" id="7rX-Ko-Ymo"/>
+                        <outlet property="noteTextView" destination="kSg-lL-QT9" id="8C1-2X-b5Z"/>
+                        <outlet property="paceLabel" destination="2iB-Xj-4KO" id="SuD-nB-b2x"/>
+                        <outlet property="timeLabel" destination="j5w-P5-TZl" id="Poj-7T-q3Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JAB-Fe-e6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="359"/>
+        </scene>
+        <!--Records View Controller-->
+        <scene sceneID="uzm-3i-GSv">
+            <objects>
+                <tableViewController storyboardIdentifier="Records" id="K5F-Z2-1Ci" customClass="RecordsViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="WEN-a3-bh3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYw-Dh-QM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="65" id="59f-Ka-IcM" customClass="RunDataCell" customModule="DailyRun" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59f-Ka-IcM" id="Too-L0-QyG">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ls-Tf-k1T">
+                                            <rect key="frame" x="8" y="21" width="88" height="43"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                            <color key="textColor" red="0.0" green="0.3921568627" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="公里" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJP-zA-q7m">
+                                            <rect key="frame" x="88" y="37" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.3921568627" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="7SR-CW-g7Y">
+                                            <rect key="frame" x="135" y="38" width="19" height="19"/>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SpeedMeter" translatesAutoresizingMaskIntoConstraints="NO" id="d95-R9-31I">
+                                            <rect key="frame" x="229" y="37" width="20" height="20"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:05:12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpK-a7-XRs">
+                                            <rect key="frame" x="161" y="37" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bel-sg-DTa">
+                                            <rect key="frame" x="257" y="37" width="30" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015/8/23 22:22:22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlb-Q9-q9e">
+                                            <rect key="frame" x="8" y="0.0" width="209" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="qlb-Q9-q9e" id="x2x-jJ-QBw"/>
+                                    <outlet property="distanceLabel" destination="7Ls-Tf-k1T" id="rUt-E6-VuA"/>
+                                    <outlet property="durationLabel" destination="lpK-a7-XRs" id="6hJ-GJ-WFg"/>
+                                    <outlet property="paceLabel" destination="Bel-sg-DTa" id="Uab-HM-q9j"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K5F-Z2-1Ci" id="kpG-H7-oXH"/>
+                            <outlet property="delegate" destination="K5F-Z2-1Ci" id="5rs-Uu-oWy"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOq-Hc-Alf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048" y="359"/>
+            <point key="canvasLocation" x="1953" y="1047"/>
         </scene>
     </scenes>
     <resources>
         <image name="02" width="120" height="120"/>
-        <image name="1439734594_clock" width="128" height="128"/>
+        <image name="Clock" width="128" height="128"/>
         <image name="Good" width="128" height="128"/>
         <image name="Gps_Good" width="128" height="128"/>
         <image name="List" width="32" height="32"/>
         <image name="Smile" width="128" height="128"/>
-        <image name="icon-high-speed" width="134" height="134"/>
+        <image name="SpeedMeter" width="128" height="128"/>
     </resources>
 </document>

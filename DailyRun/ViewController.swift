@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreLocation
-class ViewController: UIViewController,CLLocationManagerDelegate {
+import ENSwiftSideMenu
+class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDelegate{
 
     @IBOutlet weak var flipNumberView: JDFlipNumberView!
     @IBOutlet weak var tempLabel: UILabel!
@@ -34,6 +35,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         flipNumberView.value = 0
         flipNumberView.animateToValue(235, duration: 1.2)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func toggleMenu(sender: AnyObject)
+    {
+        self.toggleSideMenuView()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        flipNumberView.stopAnimation()
     }
     
     func getWeather(city:String)
