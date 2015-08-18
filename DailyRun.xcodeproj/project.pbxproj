@@ -24,6 +24,10 @@
 		25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D9906F1B7C473300CA4F33 /* UIView+JDFlipImageView.m */; };
 		25D990851B7C6A3500CA4F33 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D990841B7C6A3500CA4F33 /* libc++.dylib */; };
 		25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990861B7C6A9900CA4F33 /* WeatherObject.swift */; };
+		25DB09BC1B82E0D4004283F0 /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BB1B82E0D4004283F0 /* CountDownView.swift */; };
+		25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */; };
+		25DB09C21B830F2B004283F0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C11B830F2B004283F0 /* Common.swift */; };
+		25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */; };
 		2837453318D76CFB9D25847B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240A443DDAA6DE0AF43E815 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179C1B80655E0048E5A4 /* RunViewController.swift */; };
 		4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */; };
@@ -85,6 +89,12 @@
 		25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyRun_Bridging_Header.h; sourceTree = "<group>"; };
 		25D990841B7C6A3500CA4F33 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		25D990861B7C6A9900CA4F33 /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+		25DB09BB1B82E0D4004283F0 /* CountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountDownView.swift; path = DailyRun/CountDownView.swift; sourceTree = "<group>"; };
+		25DB09BE1B82FE4B004283F0 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		25DB09C11B830F2B004283F0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITextView+Placeholder.h"; path = "DailyRun/UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+Placeholder.m"; path = "DailyRun/UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		4C08179C1B80655E0048E5A4 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherReporter.swift; path = ../WeatherReporter.swift; sourceTree = "<group>"; };
@@ -132,6 +142,7 @@
 		25D9902F1B7C3FDE00CA4F33 = {
 			isa = PBXGroup;
 			children = (
+				25DB09BA1B82E0BC004283F0 /* View */,
 				4C7D8B651B820F110025663C /* Extensions */,
 				25D9903A1B7C3FDE00CA4F33 /* DailyRun */,
 				25D990501B7C3FDE00CA4F33 /* DailyRunTests */,
@@ -207,6 +218,7 @@
 		25D9905F1B7C473300CA4F33 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				25DB09BD1B82FE4B004283F0 /* UICountingLabel */,
 				4C6D15961B7CE322006A6594 /* SwiftyJson */,
 				25D990601B7C473300CA4F33 /* JDFlipNumberView */,
 			);
@@ -245,6 +257,23 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		25DB09BA1B82E0BC004283F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25DB09BB1B82E0D4004283F0 /* CountDownView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		25DB09BD1B82FE4B004283F0 /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				25DB09BE1B82FE4B004283F0 /* UICountingLabel.h */,
+				25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */,
+			);
+			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
 		4C6D15961B7CE322006A6594 /* SwiftyJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,7 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				4C7D8B561B820ED70025663C /* NSDate+String.swift */,
+				25DB09C11B830F2B004283F0 /* Common.swift */,
 				4C7D8B5B1B820ED70025663C /* String+Time.swift */,
+				25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */,
+				25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -334,7 +366,7 @@
 				TargetAttributes = {
 					25D990371B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = V7L6S57KTH;
+						DevelopmentTeam = HZ59NGURJ9;
 					};
 					25D9904C1B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
@@ -438,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7D8B5C1B820ED70025663C /* Locations.swift in Sources */,
+				25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */,
 				4C7D8B601B820ED70025663C /* RecordsViewController.swift in Sources */,
 				4C7D8B951B824C7D0025663C /* MenuCell.swift in Sources */,
 				25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */,
@@ -451,6 +484,7 @@
 				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
 				4C7D8B611B820ED70025663C /* RunData.swift in Sources */,
+				25DB09BC1B82E0D4004283F0 /* CountDownView.swift in Sources */,
 				25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */,
 				4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */,
 				4C7D8B641B820ED70025663C /* String+Time.swift in Sources */,
@@ -462,7 +496,9 @@
 				25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */,
 				25D990701B7C473300CA4F33 /* JDDateCountdownFlipView.m in Sources */,
 				25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */,
+				25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */,
 				4C6D159F1B7CEA62006A6594 /* JSONKeys.swift in Sources */,
+				25DB09C21B830F2B004283F0 /* Common.swift in Sources */,
 				4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LIU YI (DG82AVEA5T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -643,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LIU YI (DG82AVEA5T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

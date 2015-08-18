@@ -41,14 +41,49 @@ class RunDataManager: NSObject {
     
     func beginTransaction()
     {
-        let realm = RLMRealm.defaultRealm()
         realm.beginWriteTransaction()
     }
     
     func endTransaction()
     {
-        let realm = RLMRealm.defaultRealm()
         realm.commitWriteTransaction()
     }
+    
+    func totalMiles()->CGFloat
+    {
+        let results = RunData.allObjects()
+        var totalMiles:CGFloat = 0.0
+        for var i:UInt = 0;i < results.count;i++
+        {
+            let runData = results[i] as! RunData
+            totalMiles += runData.distance
+        }
+        return totalMiles
+    }
 
+    func didUserRunToday()->Bool
+    {
+        let today = NSDate()
+        let latestRecord = RunData.allObjects().lastObject() as? RunData
+        if latestRecord == nil{
+            return false
+        }
+        else
+        {
+            if Common.isSameDay(today, date2: latestRecord!.date)
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
+    }
+    
+    func todayRecord()->RunData?
+    {
+        let latestRecord = RunData.allObjects().lastObject() as? RunData
+        return latestRecord
+    }
 }

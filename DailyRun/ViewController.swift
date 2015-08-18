@@ -11,9 +11,9 @@ import CoreLocation
 import ENSwiftSideMenu
 class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDelegate{
 
-    @IBOutlet weak var flipNumberView: JDFlipNumberView!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var weatherIconView: UIImageView!
+    @IBOutlet weak var distanceLabel: UICountingLabel!
     @IBOutlet weak var todayTempLabel: UILabel!
     @IBOutlet weak var pmLabel: UILabel!
     @IBOutlet weak var pmIconView: UIImageView!
@@ -21,6 +21,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var gpsView: UIImageView!
+    @IBOutlet weak var smileIcon: UIImageView!
     var locationManager:CLLocationManager!
     override func viewDidLoad() {
         locationManager = CLLocationManager()
@@ -29,12 +30,24 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
         {
             locationManager.requestAlwaysAuthorization()
         }
-        locationManager.startUpdatingLocation()
-        flipNumberView.digitCount = 5
-        flipNumberView.imageBundleName = "JDFlipNumberView"
-        flipNumberView.value = 0
-        flipNumberView.animateToValue(235, duration: 1.2)
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        distanceLabel.countFrom(distanceLabel.currentValue(), to: RunDataManager.sharedInstance.totalMiles(), withDuration: 0.8)
+        if RunDataManager.sharedInstance.didUserRunToday()
+        {
+            todayRecordLabel.text = String(format: "今天你跑了%.2f公里.", RunDataManager.sharedInstance.todayRecord()!.distance)
+            smileIcon.image = UIImage(named: "Smile")
+        }
+        else
+        {
+            todayRecordLabel.text = "你今天还没有跑步哦."
+            smileIcon.image = UIImage(named: "Sad")
+        }
+        locationManager.startUpdatingLocation()
+        distanceLabel.format = "%.1f"
     }
     
     @IBAction func toggleMenu(sender: AnyObject)
@@ -44,7 +57,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        flipNumberView.stopAnimation()
     }
     
     func getWeather(city:String)

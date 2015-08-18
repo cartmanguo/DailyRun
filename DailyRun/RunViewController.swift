@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import HealthKit
 import CoreLocation
-class RunViewController: UIViewController{
+class RunViewController: UIViewController,CountDownDelegate{
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var signalView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -31,6 +31,8 @@ class RunViewController: UIViewController{
     var updateTimer:NSTimer?
     var locations:[CLLocation] = []
     var startRunning = false
+    var runData:RunData?
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
@@ -41,6 +43,10 @@ class RunViewController: UIViewController{
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         updateTimer?.invalidate()
@@ -49,12 +55,11 @@ class RunViewController: UIViewController{
     @IBAction func startPressed(sender: AnyObject) {
         if startRunning == false
         {
-            mapView.hidden = false
-            locations.removeAll(keepCapacity: false)
-            duration = 0
-            updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
-            startButton.setTitle("停止", forState: .Normal)
-            startButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+            let countDownView = CountDownView(frame:self.view.bounds)
+            countDownView.delegate = self
+            view.addSubview(countDownView)
+            countDownView.startCountDown()
+            
         }
         else
         {
@@ -64,6 +69,8 @@ class RunViewController: UIViewController{
                 self.startButton.setTitle("Start!", forState: .Normal)
                 self.startButton.setTitleColor(UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1.0), forState: .Normal)
                 self.locationManager.stopUpdatingLocation()
+                self.startRunning = false
+                self.saveRun()
                 self.performSegueWithIdentifier("Detail", sender: nil)
             })
             let cancelAction = UIAlertAction(title: "No,继续跑", style: UIAlertActionStyle.Cancel, handler: {(action) in
@@ -72,8 +79,50 @@ class RunViewController: UIViewController{
             alert.addAction(cancelAction)
             presentViewController(alert, animated: true, completion: nil)
         }
-        startRunning = !startRunning
+
     }
+    
+    func countDownFinished(countDownView: CountDownView) {
+        countDownView.removeFromSuperview()
+        mapView.hidden = false
+        locations.removeAll(keepCapacity: false)
+        duration = 0
+        updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "update", userInfo: nil, repeats: true)
+        startButton.setTitle("停止", forState: .Normal)
+        startButton.setTitleColor(UIColor.redColor(), forState: .Normal)
+        startRunning = true
+    }
+    
+    func saveRun()
+    {
+        let runData = RunData()
+        for location in locations {
+            let locations = Locations()
+            locations.latitude = location.coordinate.latitude
+            locations.longitude = location.coordinate.longitude
+            locations.timestamp = location.timestamp
+            runData.locations.addObject(locations)
+        }
+        let pace = distance/Double(duration)
+        var pacePerKilometers:Double = 0.0
+        if pace == 0
+        {
+            pacePerKilometers = 0
+        }
+        else
+        {
+            pacePerKilometers = 1000/pace/60
+        }
+
+        runData.duration = duration
+        runData.distance = CGFloat(distance)/1000
+        runData.date = NSDate(timeIntervalSinceNow: 0)
+        runData.note = "hello"
+        runData.pace = pacePerKilometers
+        self.runData = runData
+        RunDataManager.sharedInstance.saveRunData(runData)
+    }
+
     
     func update()
     {
@@ -86,19 +135,25 @@ class RunViewController: UIViewController{
         
         let paceUnit = HKUnit.secondUnit().unitDividedByUnit(HKUnit.meterUnit())
         let pace = distance/Double(duration)
-        let pacePerKilometers = 1000/pace/60
+        var pacePerKilometers:Double = 0.0
+        if pace == 0
+        {
+            pacePerKilometers = 0
+        }
+        else
+        {
+            pacePerKilometers = 1000/pace/60
+        }
         let hkPaceQuantity = HKQuantity(unit: paceUnit, doubleValue: pace)
         paceLabel.text = "配速:" + String(format: "%.2f",pacePerKilometers)
     }
     
-    @IBAction func stopPressed(sender: AnyObject) {
-        let actionSheet = UIActionSheet(title: "Run Stopped", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Save", "Discard")
-        actionSheet.actionSheetStyle = .Default
-        actionSheet.showInView(view)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        if segue.identifier == "Detail"
+        {
+            let detailtVC = segue.destinationViewController as! DetailViewController
+            detailtVC.runData = runData
+        }
     }
 }
 
@@ -161,69 +216,4 @@ extension RunViewController: MKMapViewDelegate
         renderer.lineWidth = 3
         return renderer
     }
-}
-
-// MARK: UIActionSheetDelegate
-extension RunViewController: UIActionSheetDelegate {
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        //save
-//        if buttonIndex == 1 {
-//            saveRun()
-//            performSegueWithIdentifier(DetailSegueName, sender: nil)
-//        }
-//            //discard
-//        else if buttonIndex == 2 {
-//            navigationController?.popToRootViewControllerAnimated(true)
-//        }
-    }
-    
-    func saveRun()
-    {
-//        let run = NSEntityDescription.insertNewObjectForEntityForName("Run", inManagedObjectContext: managedObjectContext!) as! Run
-//        run.distance = distance
-//        run.duration = NSNumber(integer: duration)
-//        run.timestamp = NSDate()
-//        
-//        var savedLocations = [Location]()
-//        for location in locations {
-//            let savedLocation = NSEntityDescription.insertNewObjectForEntityForName("Location",
-//                inManagedObjectContext: managedObjectContext!) as! Location
-//            savedLocation.timestamp = location.timestamp
-//            savedLocation.latitude = location.coordinate.latitude
-//            savedLocation.longitude = location.coordinate.longitude
-//            savedLocations.append(savedLocation)
-//        }
-//        run.locations = NSOrderedSet(array: savedLocations)
-//        self.run = run
-//        var err:NSError?
-//        let success = managedObjectContext?.save(&err)
-//        if success == false
-//        {
-//            NSLog("%@", "failed")
-//        }
-//        
-//        //realm
-//        let runObj = RunData()
-//        for location in locations {
-//            let locations = Locations()
-//            locations.latitude = location.coordinate.latitude
-//            locations.longitude = location.coordinate.longitude
-//            locations.timestamp = location.timestamp
-//            runObj.locations.addObject(locations)
-//        }
-//        
-//        runObj.duration = duration
-//        runObj.distance = CGFloat(distance)
-//        runObj.date = NSDate(timeIntervalSinceNow: 0)
-//        runObj.note = "hello"
-//        runObj.pace = 6.3
-//        self.runData = runObj
-//        RunDataManager.sharedInstance.saveRunData(runObj)
-    }
-
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
-    
-    
 }

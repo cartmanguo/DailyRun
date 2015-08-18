@@ -10,3 +10,5 @@
 #import "JDFlipImageView.h"
 #import "JDDateCountdownFlipView.h"
 #import "UIView+JDFlipImageView.h"
+#import "UICountingLabel.h"
+#import "UITextView+Placeholder.h"

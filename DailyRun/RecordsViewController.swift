@@ -32,10 +32,14 @@ class RecordsViewController: UITableViewController,ENSideMenuDelegate  {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! RunDataCell
-        let runData = RunData.allObjects()[UInt(indexPath.row)] as! RunData
+        let runData = RunData.allObjects().sortedResultsUsingProperty("date", ascending: false)[UInt(indexPath.row)] as! RunData
         //println("\(runData.date.dateString)")
         cell.dateLabel.text = runData.date.dateString
-        cell.distanceLabel.text = String(format: "%.2f",runData.distance)
+        var distanceText = String(format: "%.2f",runData.distance)+"公里"
+        var attributedDistanceText = NSMutableAttributedString(string: distanceText)
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir Heavy", size: 35)!, range: NSMakeRange(0, count(distanceText)-2))
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(14), range: NSMakeRange(count(distanceText)-2,2))
+        cell.distanceLabel.attributedText = attributedDistanceText
         cell.paceLabel.text = String(format: "%.2f",runData.pace)
         cell.durationLabel.text = runData.duration.timeFormatted
         return cell
@@ -43,7 +47,7 @@ class RecordsViewController: UITableViewController,ENSideMenuDelegate  {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! RunDataCell
-        let runData = RunData.allObjects()[UInt(indexPath.row)] as! RunData
+        let runData = RunData.allObjects().sortedResultsUsingProperty("date", ascending: false)[UInt(indexPath.row)] as! RunData
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Detail") as! DetailViewController
         detailVC.runData = runData
         self.navigationController?.pushViewController(detailVC, animated: true)

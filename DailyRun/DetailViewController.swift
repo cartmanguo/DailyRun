@@ -22,11 +22,11 @@ class DetailViewController: UIViewController,UITextViewDelegate {
         IQKeyboardManager.sharedManager().enable = true
         super.viewDidLoad()
         mapView.delegate = self
-        noteTextView.text = "说两句感想不..."
-        noteTextView.textColor = UIColor.lightGrayColor()
-        noteTextView.layer.borderColor = UIColor.grayColor().CGColor
+        noteTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         noteTextView.layer.borderWidth = 1.0;
         noteTextView.layer.cornerRadius = 8;
+        noteTextView.placeholder = "说两句感想嘛:"
+        noteTextView.placeholderColor = UIColor.lightGrayColor()
         self.navigationItem.hidesBackButton = true
         self.navigationController?.interactivePopGestureRecognizer.enabled = false
         let closeBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "finishRunning")
@@ -41,9 +41,9 @@ class DetailViewController: UIViewController,UITextViewDelegate {
     
     internal func finishRunning()
     {
-        RunDataManager.sharedInstance.realm.beginWriteTransaction()
+        RunDataManager.sharedInstance.beginTransaction()
         runData?.note = noteTextView.text
-        RunDataManager.sharedInstance.realm.commitWriteTransaction()
+        RunDataManager.sharedInstance.endTransaction()
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
@@ -72,10 +72,19 @@ class DetailViewController: UIViewController,UITextViewDelegate {
     }
     
     func configureView() {
+        var distanceText = String(format: "%.2f",runData!.distance)+"公里"
+        var attributedDistanceText = NSMutableAttributedString(string: distanceText)
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir Heavy", size: 50)!, range: NSMakeRange(0, count(distanceText)-2))
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(17), range: NSMakeRange(count(distanceText)-2,2))
         paceLabel.text = "配速:" + String(format: "%.2f", runData!.pace)
-        distanceLabel.text = String(format: "%.2f公里", runData!.distance)
+        distanceLabel.attributedText = attributedDistanceText
         timeLabel.text = "时间:" + runData!.duration.timeFormatted
         dateLabel.text = runData?.date.dateString
+        if count(runData!.note) > 0
+        {
+            println("\(runData?.note)")
+            noteTextView.text = runData?.note
+        }
     }
     
     func mapRegion() -> MKCoordinateRegion {
@@ -104,17 +113,11 @@ class DetailViewController: UIViewController,UITextViewDelegate {
     
     // MARK: - UITextViewDelegate
     func textViewDidBeginEditing(textView: UITextView) {
-        if textView.textColor == UIColor.lightGrayColor() {
-            textView.text = nil
-            textView.textColor = UIColor.blackColor()
-        }
+        
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "说两句感想不..."
-            textView.textColor = UIColor.lightGrayColor()
-        }
+        
     }
 }
 

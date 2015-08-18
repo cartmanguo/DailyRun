@@ -34,7 +34,7 @@ extension NSDate
         get
         {
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             return dateFormatter.stringFromDate(self)
         }
     }
