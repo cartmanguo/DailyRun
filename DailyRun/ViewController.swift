@@ -57,6 +57,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        locationManager.stopUpdatingLocation()
     }
     
     func getWeather(city:String)
@@ -78,6 +79,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
         geo.reverseGeocodeLocation(latest, completionHandler: {(placemarks,err) in
             if placemarks != nil            {
                 let placemark = placemarks.first as! CLPlacemark
+                println("\(placemark.name)")
                 var city = placemark.locality as NSString
                 city = city.substringToIndex(city.length-1)
                 self.getWeather(city as String)

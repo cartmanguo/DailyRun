@@ -83,6 +83,7 @@ class RunDataManager: NSObject {
     
     func todayRecord()->RunData?
     {
+        Common.todayAtZeroOclock()
         let latestRecord = RunData.allObjects().lastObject() as? RunData
         return latestRecord
     }

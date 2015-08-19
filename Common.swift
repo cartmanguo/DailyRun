@@ -19,4 +19,27 @@ class Common:NSObject
                comp1.month == comp2.month &&
                comp1.day == comp2.day
     }
+    
+    class func todayAtZeroOclock()
+    {
+        let localzone = NSTimeZone.localTimeZone()
+        let GTMzone = NSTimeZone(forSecondsFromGMT: 0)
+        let unitFlags = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth |  NSCalendarUnit.CalendarUnitDay
+        let today = NSDate()
+        let zone = NSTimeZone.localTimeZone()
+        let interval = zone.secondsFromGMTForDate(today)
+        let localeDate = today.dateByAddingTimeInterval(NSTimeInterval(interval))
+        let comp1 = NSCalendar.currentCalendar().components(unitFlags, fromDate: localeDate)
+        let year = comp1.year
+        let month = comp1.month
+        let day = comp1.day
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = GTMzone
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = String(format: "%d-%d-%d 23:59:59",year,month,day)
+        let zeroOclock = dateFormatter.dateFromString(dateString)
+        let dateAtZone = NSDate(timeInterval: 3600, sinceDate: zeroOclock!)
+        dateFormatter.timeZone = localzone
+        println("tod:\(dateAtZone)")
+    }
 }

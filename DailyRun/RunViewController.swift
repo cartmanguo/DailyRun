@@ -128,7 +128,7 @@ class RunViewController: UIViewController,CountDownDelegate{
     {
         duration++
         let hkSecondsQuantity = HKQuantity(unit: HKUnit.secondUnit(), doubleValue: Double(duration))
-        timeLabel.text = "时间:" + hkSecondsQuantity.description
+        timeLabel.text = "时间:" + duration.timeFormatted
         let mileDistance = distance/1000
         let hkDistanceQuantity = HKQuantity(unit: HKUnit.mileUnit(), doubleValue: mileDistance)
         distanceLabel.text = String(format: "%.2f", mileDistance) + "公里"
@@ -181,30 +181,32 @@ extension RunViewController:CLLocationManagerDelegate
             // Full Signal
             signalView.image = UIImage(named: "Gps_Good")
         }
-        if startRunning
-        {
-            for location in locations as! [CLLocation]
-            {
-                if self.locations.count > 0
-                {
-                    distance += location.distanceFromLocation(self.locations.last)
-                    var coords = [CLLocationCoordinate2D]()
-                    coords.append(self.locations.last!.coordinate)
-                    coords.append(location.coordinate)
-                    
-                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
-                    //                    mapView.setRegion(region, animated: true)
-                    //
-                    //                    mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
-                }
-                self.locations.append(location)
-            }
-        }
+        
     }
 }
 
 extension RunViewController: MKMapViewDelegate
 {
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        if startRunning
+        {
+            if self.locations.count > 0
+            {
+                distance += userLocation.location.distanceFromLocation(self.locations.last)
+                var coords = [CLLocationCoordinate2D]()
+                coords.append(self.locations.last!.coordinate)
+                coords.append(userLocation.location.coordinate)
+                
+                let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 500, 500)
+                mapView.setRegion(region, animated: true)
+                
+                mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
+            }
+            self.locations.append(userLocation.location)
+        }
+
+    }
+    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if !overlay.isKindOfClass(MKPolyline) {
             return nil

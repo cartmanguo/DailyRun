@@ -28,6 +28,7 @@
 		25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */; };
 		25DB09C21B830F2B004283F0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C11B830F2B004283F0 /* Common.swift */; };
 		25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */; };
+		25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */; };
 		2837453318D76CFB9D25847B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240A443DDAA6DE0AF43E815 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179C1B80655E0048E5A4 /* RunViewController.swift */; };
 		4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */; };
@@ -62,15 +63,15 @@
 /* Begin PBXFileReference section */
 		25D990381B7C3FDE00CA4F33 /* DailyRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D9903C1B7C3FDE00CA4F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DailyRun/AppDelegate.swift; sourceTree = "<group>"; };
+		25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = DailyRun/ViewController.swift; sourceTree = "<group>"; };
 		25D990421B7C3FDE00CA4F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25D990441B7C3FDE00CA4F33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		25D990471B7C3FDE00CA4F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		25D9904D1B7C3FDE00CA4F33 /* DailyRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D990521B7C3FDE00CA4F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25D990531B7C3FDE00CA4F33 /* DailyRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRunTests.swift; sourceTree = "<group>"; };
-		25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyNavigationController.swift; path = DailyRun/MyNavigationController.swift; sourceTree = "<group>"; };
 		25D990611B7C473300CA4F33 /* JDDateCountdownFlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDDateCountdownFlipView.h; sourceTree = "<group>"; };
 		25D990621B7C473300CA4F33 /* JDDateCountdownFlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDDateCountdownFlipView.m; sourceTree = "<group>"; };
 		25D990631B7C473300CA4F33 /* JDFlipClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFlipClockView.h; sourceTree = "<group>"; };
@@ -95,25 +96,26 @@
 		25DB09C11B830F2B004283F0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITextView+Placeholder.h"; path = "DailyRun/UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+Placeholder.m"; path = "DailyRun/UITextView+Placeholder.m"; sourceTree = "<group>"; };
-		4C08179C1B80655E0048E5A4 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
-		4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarsCoordinateConverter.swift; sourceTree = "<group>"; };
+		4C08179C1B80655E0048E5A4 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunViewController.swift; path = DailyRun/RunViewController.swift; sourceTree = "<group>"; };
+		4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = DailyRun/DetailViewController.swift; sourceTree = "<group>"; };
 		4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherReporter.swift; path = ../WeatherReporter.swift; sourceTree = "<group>"; };
-		4C6D15941B7CE1BB006A6594 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Urls.swift; path = ../Urls.swift; sourceTree = "<group>"; };
+		4C6D15941B7CE1BB006A6594 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		4C6D15971B7CE322006A6594 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		4C6D15981B7CE322006A6594 /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		4C6D15991B7CE322006A6594 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONKeys.swift; sourceTree = "<group>"; };
+		4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONKeys.swift; path = DailyRun/JSONKeys.swift; sourceTree = "<group>"; };
 		4C7D8B531B820ED70025663C /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		4C7D8B541B820ED70025663C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4C7D8B551B820ED70025663C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4C7D8B541B820ED70025663C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = DailyRun/MainViewController.swift; sourceTree = "<group>"; };
+		4C7D8B551B820ED70025663C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = DailyRun/MenuViewController.swift; sourceTree = "<group>"; };
 		4C7D8B561B820ED70025663C /* NSDate+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+String.swift"; path = "DailyRun/NSDate+String.swift"; sourceTree = "<group>"; };
-		4C7D8B571B820ED70025663C /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		4C7D8B571B820ED70025663C /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordsViewController.swift; path = DailyRun/RecordsViewController.swift; sourceTree = "<group>"; };
 		4C7D8B581B820ED70025663C /* RunData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
-		4C7D8B591B820ED70025663C /* RunDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataCell.swift; sourceTree = "<group>"; };
+		4C7D8B591B820ED70025663C /* RunDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunDataCell.swift; path = DailyRun/RunDataCell.swift; sourceTree = "<group>"; };
 		4C7D8B5A1B820ED70025663C /* RunDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataManager.swift; sourceTree = "<group>"; };
 		4C7D8B5B1B820ED70025663C /* String+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Time.swift"; path = "DailyRun/String+Time.swift"; sourceTree = "<group>"; };
-		4C7D8B941B824C7D0025663C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		4C7D8B941B824C7D0025663C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = DailyRun/MenuCell.swift; sourceTree = "<group>"; };
 		5240A443DDAA6DE0AF43E815 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		938F5CC890BC018851830495 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9E054DEE4D4A0252D63F79BA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,8 +144,6 @@
 		25D9902F1B7C3FDE00CA4F33 = {
 			isa = PBXGroup;
 			children = (
-				25DB09BA1B82E0BC004283F0 /* View */,
-				4C7D8B651B820F110025663C /* Extensions */,
 				25D9903A1B7C3FDE00CA4F33 /* DailyRun */,
 				25D990501B7C3FDE00CA4F33 /* DailyRunTests */,
 				25D990391B7C3FDE00CA4F33 /* Products */,
@@ -164,27 +164,18 @@
 		25D9903A1B7C3FDE00CA4F33 /* DailyRun */ = {
 			isa = PBXGroup;
 			children = (
-				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
-				4C7D8B5A1B820ED70025663C /* RunDataManager.swift */,
-				4C6D15941B7CE1BB006A6594 /* Urls.swift */,
-				4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */,
 				25D990841B7C6A3500CA4F33 /* libc++.dylib */,
-				25D990881B7C6AB400CA4F33 /* Data */,
-				25D9905F1B7C473300CA4F33 /* Vendor */,
-				25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */,
-				25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */,
-				4C7D8B541B820ED70025663C /* MainViewController.swift */,
-				4C7D8B551B820ED70025663C /* MenuViewController.swift */,
-				4C7D8B941B824C7D0025663C /* MenuCell.swift */,
-				4C7D8B571B820ED70025663C /* RecordsViewController.swift */,
-				4C7D8B591B820ED70025663C /* RunDataCell.swift */,
-				25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */,
-				4C08179C1B80655E0048E5A4 /* RunViewController.swift */,
-				4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */,
 				25D990411B7C3FDE00CA4F33 /* Main.storyboard */,
 				25D990781B7C475800CA4F33 /* DailyRun_Bridging_Header.h */,
 				25D990441B7C3FDE00CA4F33 /* Images.xcassets */,
 				25D990461B7C3FDE00CA4F33 /* LaunchScreen.xib */,
+				25DC830D1B842187007667D5 /* AppDelegate */,
+				25D990881B7C6AB400CA4F33 /* Data */,
+				25D9905F1B7C473300CA4F33 /* Vendor */,
+				4C7D8B651B820F110025663C /* Extensions */,
+				25DB09BA1B82E0BC004283F0 /* View */,
+				25DC830B1B8420A5007667D5 /* Utils */,
+				25DC830C1B8420CE007667D5 /* ViewController */,
 				25D9903B1B7C3FDE00CA4F33 /* Supporting Files */,
 			);
 			path = DailyRun;
@@ -250,6 +241,8 @@
 		25D990881B7C6AB400CA4F33 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
+				4C7D8B5A1B820ED70025663C /* RunDataManager.swift */,
 				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
 				4C7D8B531B820ED70025663C /* Locations.swift */,
 				4C7D8B581B820ED70025663C /* RunData.swift */,
@@ -260,9 +253,12 @@
 		25DB09BA1B82E0BC004283F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C7D8B941B824C7D0025663C /* MenuCell.swift */,
+				4C7D8B591B820ED70025663C /* RunDataCell.swift */,
 				25DB09BB1B82E0D4004283F0 /* CountDownView.swift */,
 			);
 			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		25DB09BD1B82FE4B004283F0 /* UICountingLabel */ = {
@@ -272,6 +268,42 @@
 				25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */,
 			);
 			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		25DC830B1B8420A5007667D5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4C6D15941B7CE1BB006A6594 /* Urls.swift */,
+				4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */,
+				25DB09C11B830F2B004283F0 /* Common.swift */,
+				25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */,
+			);
+			name = Utils;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		25DC830C1B8420CE007667D5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				25D9903F1B7C3FDE00CA4F33 /* ViewController.swift */,
+				25D9905D1B7C43A500CA4F33 /* MyNavigationController.swift */,
+				4C7D8B541B820ED70025663C /* MainViewController.swift */,
+				4C7D8B551B820ED70025663C /* MenuViewController.swift */,
+				4C7D8B571B820ED70025663C /* RecordsViewController.swift */,
+				4C08179C1B80655E0048E5A4 /* RunViewController.swift */,
+				4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */,
+			);
+			name = ViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		25DC830D1B842187007667D5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				25D9903D1B7C3FDE00CA4F33 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4C6D15961B7CE322006A6594 /* SwiftyJson */ = {
@@ -289,12 +321,12 @@
 			isa = PBXGroup;
 			children = (
 				4C7D8B561B820ED70025663C /* NSDate+String.swift */,
-				25DB09C11B830F2B004283F0 /* Common.swift */,
 				4C7D8B5B1B820ED70025663C /* String+Time.swift */,
 				25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */,
 				25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */,
 			);
 			name = Extensions;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6C8746A11FEA7383136F5D16 /* Frameworks */ = {
@@ -367,6 +399,11 @@
 					25D990371B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = HZ59NGURJ9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					25D9904C1B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
@@ -480,6 +517,7 @@
 				25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */,
 				4C7D8B5D1B820ED70025663C /* MainViewController.swift in Sources */,
 				4C7D8B631B820ED70025663C /* RunDataManager.swift in Sources */,
+				25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */,
 				4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */,
 				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
@@ -633,6 +671,7 @@
 					"$(PROJECT_DIR)/DailyRun",
 				);
 				INFOPLIST_FILE = DailyRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DailyRun/DailyRun_Bridging_Header.h";
@@ -650,6 +689,7 @@
 					"$(PROJECT_DIR)/DailyRun",
 				);
 				INFOPLIST_FILE = DailyRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DailyRun/DailyRun_Bridging_Header.h";
