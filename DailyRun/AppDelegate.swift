@@ -7,13 +7,11 @@
 //
 
 import UIKit
-
+import SlideMenuControllerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UINavigationBar.appearance().barTintColor = UIColor(red: 0/255, green: 100/255, blue: 255/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()

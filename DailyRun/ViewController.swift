@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
-import ENSwiftSideMenu
-class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDelegate{
+import SlideMenuControllerSwift
+import SWRevealViewController
+class ViewController: UIViewController,CLLocationManagerDelegate{
 
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var weatherIconView: UIImageView!
@@ -23,15 +24,20 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var gpsView: UIImageView!
     @IBOutlet weak var smileIcon: UIImageView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     var locationManager:CLLocationManager!
     override func viewDidLoad() {
-        println("vdl")
         RunDataManager.sharedInstance.todayRecord()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
         {
             locationManager.requestAlwaysAuthorization()
+        }
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,7 +61,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     
     @IBAction func toggleMenu(sender: AnyObject)
     {
-        self.toggleSideMenuView()
+        //self.slideMenuController()?.openLeft()
     }
     
     override func viewWillDisappear(animated: Bool) {

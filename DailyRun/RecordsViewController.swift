@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import ENSwiftSideMenu
-class RecordsViewController: UITableViewController,ENSideMenuDelegate  {
+import SlideMenuControllerSwift
+class RecordsViewController: UITableViewController {
     override func viewDidLoad() {
         self.title = "运动记录"
-        self.sideMenuController()?.sideMenu?.delegate = self
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "List"), style: .Plain, target: self, action: "toggleMenu")
         self.navigationItem.leftBarButtonItem = menuBarButton
         //self.tableView.registerClass(RunDataCell.self, forCellReuseIdentifier: "Cell")
@@ -27,7 +26,7 @@ class RecordsViewController: UITableViewController,ENSideMenuDelegate  {
     
     func toggleMenu()
     {
-        self.toggleSideMenuView()
+        self.slideMenuController()?.openLeft()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

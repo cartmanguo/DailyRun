@@ -26,17 +26,17 @@
 		25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D990861B7C6A9900CA4F33 /* WeatherObject.swift */; };
 		25DB09BC1B82E0D4004283F0 /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BB1B82E0D4004283F0 /* CountDownView.swift */; };
 		25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */; };
-		25DB09C21B830F2B004283F0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C11B830F2B004283F0 /* Common.swift */; };
 		25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */; };
 		25DC7D451B857B9100C472A2 /* AqiReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D441B857B9100C472A2 /* AqiReporter.swift */; };
 		25DC7D471B857F6C00C472A2 /* AqiObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D461B857F6C00C472A2 /* AqiObject.swift */; };
-		25DC7D491B859C0900C472A2 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */; };
-		25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */; };
+		25DC7D4B1B85A6F000C472A2 /* WeatherReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D4A1B85A6F000C472A2 /* WeatherReporter.swift */; };
+		25DC7D4D1B85A6FD00C472A2 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D4C1B85A6FD00C472A2 /* UIColor+Hex.swift */; };
+		25DC7D511B85A72400C472A2 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D4E1B85A72400C472A2 /* Common.swift */; };
+		25DC7D521B85A72400C472A2 /* MarsCoordinateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D4F1B85A72400C472A2 /* MarsCoordinateConverter.swift */; };
+		25DC7D531B85A72400C472A2 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D501B85A72400C472A2 /* Urls.swift */; };
 		2837453318D76CFB9D25847B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240A443DDAA6DE0AF43E815 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179C1B80655E0048E5A4 /* RunViewController.swift */; };
 		4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */; };
-		4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */; };
-		4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D15941B7CE1BB006A6594 /* Urls.swift */; };
 		4C6D159B1B7CE322006A6594 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15971B7CE322006A6594 /* Info-iOS.plist */; };
 		4C6D159C1B7CE322006A6594 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15981B7CE322006A6594 /* Info-OSX.plist */; };
 		4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6D159A1B7CE322006A6594 /* SwiftyJSON.swift */; };
@@ -96,17 +96,17 @@
 		25DB09BB1B82E0D4004283F0 /* CountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountDownView.swift; path = DailyRun/CountDownView.swift; sourceTree = "<group>"; };
 		25DB09BE1B82FE4B004283F0 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		25DB09C11B830F2B004283F0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITextView+Placeholder.h"; path = "DailyRun/UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+Placeholder.m"; path = "DailyRun/UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		25DC7D441B857B9100C472A2 /* AqiReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AqiReporter.swift; sourceTree = "<group>"; };
 		25DC7D461B857F6C00C472A2 /* AqiObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AqiObject.swift; sourceTree = "<group>"; };
-		25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarsCoordinateConverter.swift; sourceTree = "<group>"; };
+		25DC7D4A1B85A6F000C472A2 /* WeatherReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherReporter.swift; sourceTree = "<group>"; };
+		25DC7D4C1B85A6FD00C472A2 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "DailyRun/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		25DC7D4E1B85A72400C472A2 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = DailyRun/Common.swift; sourceTree = "<group>"; };
+		25DC7D4F1B85A72400C472A2 /* MarsCoordinateConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarsCoordinateConverter.swift; path = DailyRun/MarsCoordinateConverter.swift; sourceTree = "<group>"; };
+		25DC7D501B85A72400C472A2 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Urls.swift; path = DailyRun/Urls.swift; sourceTree = "<group>"; };
 		4C08179C1B80655E0048E5A4 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunViewController.swift; path = DailyRun/RunViewController.swift; sourceTree = "<group>"; };
 		4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = DailyRun/DetailViewController.swift; sourceTree = "<group>"; };
-		4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherReporter.swift; path = ../WeatherReporter.swift; sourceTree = "<group>"; };
-		4C6D15941B7CE1BB006A6594 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		4C6D15971B7CE322006A6594 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		4C6D15981B7CE322006A6594 /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		4C6D15991B7CE322006A6594 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		25D990881B7C6AB400CA4F33 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
+				25DC7D4A1B85A6F000C472A2 /* WeatherReporter.swift */,
 				25DC7D441B857B9100C472A2 /* AqiReporter.swift */,
 				4C7D8B5A1B820ED70025663C /* RunDataManager.swift */,
 				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
@@ -281,10 +281,10 @@
 		25DC830B1B8420A5007667D5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4C6D15941B7CE1BB006A6594 /* Urls.swift */,
+				25DC7D4E1B85A72400C472A2 /* Common.swift */,
+				25DC7D4F1B85A72400C472A2 /* MarsCoordinateConverter.swift */,
+				25DC7D501B85A72400C472A2 /* Urls.swift */,
 				4C6D159E1B7CEA62006A6594 /* JSONKeys.swift */,
-				25DB09C11B830F2B004283F0 /* Common.swift */,
-				25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */,
 			);
 			name = Utils;
 			path = ..;
@@ -329,7 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7D8B561B820ED70025663C /* NSDate+String.swift */,
-				25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */,
+				25DC7D4C1B85A6FD00C472A2 /* UIColor+Hex.swift */,
 				4C7D8B5B1B820ED70025663C /* String+Time.swift */,
 				25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */,
 				25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */,
@@ -518,6 +518,8 @@
 				4C7D8B5C1B820ED70025663C /* Locations.swift in Sources */,
 				25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */,
 				4C7D8B601B820ED70025663C /* RecordsViewController.swift in Sources */,
+				25DC7D4B1B85A6F000C472A2 /* WeatherReporter.swift in Sources */,
+				25DC7D511B85A72400C472A2 /* Common.swift in Sources */,
 				4C7D8B951B824C7D0025663C /* MenuCell.swift in Sources */,
 				25D990771B7C473300CA4F33 /* UIView+JDFlipImageView.m in Sources */,
 				4C7D8B621B820ED70025663C /* RunDataCell.swift in Sources */,
@@ -527,15 +529,13 @@
 				4C7D8B5D1B820ED70025663C /* MainViewController.swift in Sources */,
 				25DC7D451B857B9100C472A2 /* AqiReporter.swift in Sources */,
 				4C7D8B631B820ED70025663C /* RunDataManager.swift in Sources */,
-				25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */,
-				4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */,
-				25DC7D491B859C0900C472A2 /* UIColor+Hex.swift in Sources */,
 				25DC7D471B857F6C00C472A2 /* AqiObject.swift in Sources */,
-				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
 				4C7D8B611B820ED70025663C /* RunData.swift in Sources */,
 				25DB09BC1B82E0D4004283F0 /* CountDownView.swift in Sources */,
 				25D990871B7C6A9900CA4F33 /* WeatherObject.swift in Sources */,
+				25DC7D531B85A72400C472A2 /* Urls.swift in Sources */,
+				25DC7D4D1B85A6FD00C472A2 /* UIColor+Hex.swift in Sources */,
 				4C08179F1B80E42C0048E5A4 /* DetailViewController.swift in Sources */,
 				4C7D8B641B820ED70025663C /* String+Time.swift in Sources */,
 				4C7D8B5E1B820ED70025663C /* MenuViewController.swift in Sources */,
@@ -543,12 +543,12 @@
 				4C7D8B5F1B820ED70025663C /* NSDate+String.swift in Sources */,
 				25D990401B7C3FDE00CA4F33 /* ViewController.swift in Sources */,
 				25D990721B7C473300CA4F33 /* JDFlipImageView.m in Sources */,
+				25DC7D521B85A72400C472A2 /* MarsCoordinateConverter.swift in Sources */,
 				25D9903E1B7C3FDE00CA4F33 /* AppDelegate.swift in Sources */,
 				25D990701B7C473300CA4F33 /* JDDateCountdownFlipView.m in Sources */,
 				25D990761B7C473300CA4F33 /* JDFlipNumberViewImageFactory.m in Sources */,
 				25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */,
 				4C6D159F1B7CEA62006A6594 /* JSONKeys.swift in Sources */,
-				25DB09C21B830F2B004283F0 /* Common.swift in Sources */,
 				4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
