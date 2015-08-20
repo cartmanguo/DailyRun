@@ -19,10 +19,9 @@ class WeatherReporter: NSObject {
         let dataTask = session.dataTaskWithRequest(request, completionHandler: {(data,response,err) in
             if err == nil
             {
-                println("ok")
                 let json = JSON(data:data)
                 let cityCode = json["retData"]["cityCode"].string
-                println("\(json)")
+                //println("\(json)")
                 requestUrl = String(format: weatherUrlBase, cityCode!)
                 requestUrl = requestUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
                 let config = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -32,7 +31,7 @@ class WeatherReporter: NSObject {
                     if err == nil
                     {
                         let json = JSON(data:data)
-                        println("\(json)")
+                        //println("\(json)")
                         let currentTemp = json["result"][currentTempKey].intValue
                         let highTemp = json["result"][highTempKey].intValue
                         let lowTemp = json["result"][lowTempKey].intValue

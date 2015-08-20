@@ -20,26 +20,25 @@ class Common:NSObject
                comp1.day == comp2.day
     }
     
-    class func todayAtZeroOclock()
+    class func todayAtZeroOclock()->NSDate
     {
-        let localzone = NSTimeZone.localTimeZone()
-        let GTMzone = NSTimeZone(forSecondsFromGMT: 0)
         let unitFlags = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth |  NSCalendarUnit.CalendarUnitDay
-        let today = NSDate()
-        let zone = NSTimeZone.localTimeZone()
-        let interval = zone.secondsFromGMTForDate(today)
-        let localeDate = today.dateByAddingTimeInterval(NSTimeInterval(interval))
-        let comp1 = NSCalendar.currentCalendar().components(unitFlags, fromDate: localeDate)
-        let year = comp1.year
-        let month = comp1.month
-        let day = comp1.day
+        let date = NSDate()
+        let comp1 = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
+        let today = NSCalendar.currentCalendar().dateFromComponents(comp1)
+        let comp2 = NSDateComponents()
+        comp2.day = -1
+        let yesterday = NSCalendar.currentCalendar().dateByAddingComponents(comp2, toDate: today!, options: nil)
+        let yesterdayComp = NSCalendar.currentCalendar().components(unitFlags, fromDate: yesterday!)
+        let year = yesterdayComp.year
+        let month = yesterdayComp.month
+        let day = yesterdayComp.day
         let dateFormatter = NSDateFormatter()
-        dateFormatter.timeZone = GTMzone
+        dateFormatter.timeZone = NSTimeZone(name: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateString = String(format: "%d-%d-%d 23:59:59",year,month,day)
         let zeroOclock = dateFormatter.dateFromString(dateString)
-        let dateAtZone = NSDate(timeInterval: 3600, sinceDate: zeroOclock!)
-        dateFormatter.timeZone = localzone
-        println("tod:\(dateAtZone)")
+        println("tod:\(zeroOclock)")
+        return zeroOclock!
     }
 }

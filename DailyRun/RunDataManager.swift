@@ -81,10 +81,16 @@ class RunDataManager: NSObject {
         }
     }
     
-    func todayRecord()->RunData?
+    func todayRecord()->CGFloat
     {
-        Common.todayAtZeroOclock()
-        let latestRecord = RunData.allObjects().lastObject() as? RunData
-        return latestRecord
+        let zeroOclockDate = Common.todayAtZeroOclock()
+        var totalDistanceToday:CGFloat = 0.0
+        let results = RunData.objectsInRealm(self.realm, withPredicate: NSPredicate(format: "date > %@", zeroOclockDate))
+        for var i:UInt = 0;i<results.count;i++
+        {
+            let runDataToday = results[i] as! RunData
+            totalDistanceToday += runDataToday.distance
+        }
+        return totalDistanceToday
     }
 }

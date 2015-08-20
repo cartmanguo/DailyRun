@@ -28,6 +28,9 @@
 		25DB09C01B82FE4B004283F0 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09BF1B82FE4B004283F0 /* UICountingLabel.m */; };
 		25DB09C21B830F2B004283F0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C11B830F2B004283F0 /* Common.swift */; };
 		25DB09C51B8315E9004283F0 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */; };
+		25DC7D451B857B9100C472A2 /* AqiReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D441B857B9100C472A2 /* AqiReporter.swift */; };
+		25DC7D471B857F6C00C472A2 /* AqiObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D461B857F6C00C472A2 /* AqiObject.swift */; };
+		25DC7D491B859C0900C472A2 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */; };
 		25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */; };
 		2837453318D76CFB9D25847B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240A443DDAA6DE0AF43E815 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C08179D1B80655E0048E5A4 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08179C1B80655E0048E5A4 /* RunViewController.swift */; };
@@ -96,6 +99,9 @@
 		25DB09C11B830F2B004283F0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITextView+Placeholder.h"; path = "DailyRun/UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+Placeholder.m"; path = "DailyRun/UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		25DC7D441B857B9100C472A2 /* AqiReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AqiReporter.swift; sourceTree = "<group>"; };
+		25DC7D461B857F6C00C472A2 /* AqiObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AqiObject.swift; sourceTree = "<group>"; };
+		25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		25DC83091B842092007667D5 /* MarsCoordinateConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarsCoordinateConverter.swift; sourceTree = "<group>"; };
 		4C08179C1B80655E0048E5A4 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunViewController.swift; path = DailyRun/RunViewController.swift; sourceTree = "<group>"; };
 		4C08179E1B80E42C0048E5A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = DailyRun/DetailViewController.swift; sourceTree = "<group>"; };
@@ -242,8 +248,10 @@
 			isa = PBXGroup;
 			children = (
 				4C6D15921B7CDEC8006A6594 /* WeatherReporter.swift */,
+				25DC7D441B857B9100C472A2 /* AqiReporter.swift */,
 				4C7D8B5A1B820ED70025663C /* RunDataManager.swift */,
 				25D990861B7C6A9900CA4F33 /* WeatherObject.swift */,
+				25DC7D461B857F6C00C472A2 /* AqiObject.swift */,
 				4C7D8B531B820ED70025663C /* Locations.swift */,
 				4C7D8B581B820ED70025663C /* RunData.swift */,
 			);
@@ -321,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7D8B561B820ED70025663C /* NSDate+String.swift */,
+				25DC7D481B859C0900C472A2 /* UIColor+Hex.swift */,
 				4C7D8B5B1B820ED70025663C /* String+Time.swift */,
 				25DB09C31B8315E1004283F0 /* UITextView+Placeholder.h */,
 				25DB09C41B8315E9004283F0 /* UITextView+Placeholder.m */,
@@ -516,9 +525,12 @@
 				4C6D159D1B7CE322006A6594 /* SwiftyJSON.swift in Sources */,
 				25D9905E1B7C43A500CA4F33 /* MyNavigationController.swift in Sources */,
 				4C7D8B5D1B820ED70025663C /* MainViewController.swift in Sources */,
+				25DC7D451B857B9100C472A2 /* AqiReporter.swift in Sources */,
 				4C7D8B631B820ED70025663C /* RunDataManager.swift in Sources */,
 				25DC830A1B842092007667D5 /* MarsCoordinateConverter.swift in Sources */,
 				4C6D15931B7CDEC8006A6594 /* WeatherReporter.swift in Sources */,
+				25DC7D491B859C0900C472A2 /* UIColor+Hex.swift in Sources */,
+				25DC7D471B857F6C00C472A2 /* AqiObject.swift in Sources */,
 				4C6D15951B7CE1BB006A6594 /* Urls.swift in Sources */,
 				25D990751B7C473300CA4F33 /* JDFlipNumberView.m in Sources */,
 				4C7D8B611B820ED70025663C /* RunData.swift in Sources */,

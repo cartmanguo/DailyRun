@@ -17,6 +17,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     @IBOutlet weak var todayTempLabel: UILabel!
     @IBOutlet weak var pmLabel: UILabel!
     @IBOutlet weak var pmIconView: UIImageView!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var todayRecordLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var cityLabel: UILabel!
@@ -24,6 +25,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
     @IBOutlet weak var smileIcon: UIImageView!
     var locationManager:CLLocationManager!
     override func viewDidLoad() {
+        println("vdl")
+        RunDataManager.sharedInstance.todayRecord()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
@@ -38,12 +41,12 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
         distanceLabel.countFrom(distanceLabel.currentValue(), to: RunDataManager.sharedInstance.totalMiles(), withDuration: 0.8)
         if RunDataManager.sharedInstance.didUserRunToday()
         {
-            todayRecordLabel.text = String(format: "今天你跑了%.2f公里.", RunDataManager.sharedInstance.todayRecord()!.distance)
+            todayRecordLabel.text = String(format: "今天你跑了%.2f公里.", RunDataManager.sharedInstance.todayRecord())
             smileIcon.image = UIImage(named: "Smile")
         }
         else
         {
-            todayRecordLabel.text = "你今天还没有跑步哦."
+            todayRecordLabel.text = "你今天还没有跑步哦ˇ﹏ˇ."
             smileIcon.image = UIImage(named: "Sad")
         }
         locationManager.startUpdatingLocation()
@@ -73,18 +76,37 @@ class ViewController: UIViewController,CLLocationManagerDelegate,ENSideMenuDeleg
         })
     }
     
+    func getAqi(city:String)
+    {
+        AqiReporter.requestAqiLevelForCity(city, success: {(data:AqiObject) in
+            dispatch_async(dispatch_get_main_queue(), {() in
+                self.pmLabel.text = "空气质量:"+String(format: "%d,%@", data.aqi!,data.level!)
+                self.pmIconView.image = data.aqiIcon
+            })
+            
+            }, failed: {(err) in
+        })
+
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        locationManager.stopUpdatingLocation()
         let latest = locations.last as! CLLocation
         let geo = CLGeocoder()
         geo.reverseGeocodeLocation(latest, completionHandler: {(placemarks,err) in
-            if placemarks != nil            {
+            if placemarks != nil
+            {
                 let placemark = placemarks.first as! CLPlacemark
-                println("\(placemark.name)")
                 var city = placemark.locality as NSString
                 city = city.substringToIndex(city.length-1)
                 self.getWeather(city as String)
+                self.getAqi(city as String)
                 self.cityLabel.text = placemark.locality
                 self.locationManager.stopUpdatingLocation()
+            }
+            else
+            {
+                self.locationManager.startUpdatingLocation()
             }
         })
     }

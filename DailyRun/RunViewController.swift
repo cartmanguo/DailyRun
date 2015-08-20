@@ -91,6 +91,7 @@ class RunViewController: UIViewController,CountDownDelegate{
         startButton.setTitle("停止", forState: .Normal)
         startButton.setTitleColor(UIColor.redColor(), forState: .Normal)
         startRunning = true
+        self.navigationItem.hidesBackButton = true
     }
     
     func saveRun()
@@ -117,7 +118,6 @@ class RunViewController: UIViewController,CountDownDelegate{
         runData.duration = duration
         runData.distance = CGFloat(distance)/1000
         runData.date = NSDate(timeIntervalSinceNow: 0)
-        runData.note = "hello"
         runData.pace = pacePerKilometers
         self.runData = runData
         RunDataManager.sharedInstance.saveRunData(runData)
