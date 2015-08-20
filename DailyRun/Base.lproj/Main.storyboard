@@ -521,34 +521,31 @@
         <scene sceneID="Meh-4R-6Pu">
             <objects>
                 <tableViewController id="Ivb-Gp-j1V" customClass="MenuViewController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fhK-Mg-xfR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fhK-Mg-xfR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="AMc-5P-IPH">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mkv-xu-goV" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mkv-xu-goV" id="EbP-BL-6cD">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ham-j1-yjD" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="iUb-NQ-OgL"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mMf-Qz-7TD" userLabel="Menu Cell" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mMf-Qz-7TD" id="mok-Nw-dJ2">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gZj-Lf-giL" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="DWk-b7-fkm"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mkv-xu-goV" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mkv-xu-goV" id="EbP-BL-6cD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ham-j1-yjD" kind="custom" identifier="Home" customClass="SWRevealViewControllerSeguePushController" id="iUb-NQ-OgL"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mMf-Qz-7TD" userLabel="Menu Cell" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mMf-Qz-7TD" id="mok-Nw-dJ2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="gZj-Lf-giL" kind="custom" identifier="Records" customClass="SWRevealViewControllerSeguePushController" id="DWk-b7-fkm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Ivb-Gp-j1V" id="kQr-rd-IX2"/>
                             <outlet property="delegate" destination="Ivb-Gp-j1V" id="hPu-85-Ufi"/>
@@ -558,7 +555,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxf-Za-WEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="1331"/>
+            <point key="canvasLocation" x="-441" y="1435"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="uzm-3i-GSv">

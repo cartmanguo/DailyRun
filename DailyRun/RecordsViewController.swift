@@ -13,6 +13,11 @@ class RecordsViewController: UITableViewController {
         self.title = "运动记录"
         let menuBarButton = UIBarButtonItem(image: UIImage(named: "List"), style: .Plain, target: self, action: "toggleMenu")
         self.navigationItem.leftBarButtonItem = menuBarButton
+        if self.revealViewController() != nil {
+            menuBarButton.target = self.revealViewController()
+            menuBarButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         //self.tableView.registerClass(RunDataCell.self, forCellReuseIdentifier: "Cell")
     }
     

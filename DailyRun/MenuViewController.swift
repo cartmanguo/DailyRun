@@ -34,5 +34,56 @@ class MenuViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // Return the number of sections.
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows in the section.
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? MenuCell
+        if (cell == nil) {
+            cell = MenuCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
+            cell!.textLabel?.textColor = UIColor.darkGrayColor()
+        }
+        cell?.imageView?.image = images[indexPath.row]
+        cell!.textLabel?.text = titles[indexPath.row]
+        return cell!
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        println("Selected row: \(indexPath.row)")
+        
+        if (indexPath.row == selectedMenuItem) {
+            return
+        }
+        
+        selectedMenuItem = indexPath.row
+        
+        //Present new view controller
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        switch (indexPath.row) {
+        case 0:
+            performSegueWithIdentifier("Home", sender: nil)
+            break
+        case 1:
+            performSegueWithIdentifier("Records", sender: nil)
+            break
+        default:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4") as! UIViewController
+            break
+        }
+    }
 
 }
