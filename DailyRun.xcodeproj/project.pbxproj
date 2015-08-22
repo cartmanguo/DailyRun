@@ -407,7 +407,7 @@
 				TargetAttributes = {
 					25D990371B7C3FDE00CA4F33 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = HZ59NGURJ9;
+						DevelopmentTeam = V7L6S57KTH;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -712,7 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: LIU YI (DG82AVEA5T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cheng Guo (P88CY8L2F4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -724,6 +724,7 @@
 				INFOPLIST_FILE = DailyRunTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "541b2448-63ec-49be-89cd-6e1327153fec";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyRun.app/DailyRun";
 			};
 			name = Debug;
@@ -732,7 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: LIU YI (DG82AVEA5T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cheng Guo (P88CY8L2F4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -740,6 +741,7 @@
 				INFOPLIST_FILE = DailyRunTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "541b2448-63ec-49be-89cd-6e1327153fec";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyRun.app/DailyRun";
 			};
 			name = Release;

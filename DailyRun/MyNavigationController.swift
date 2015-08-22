@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ENSwiftSideMenu
 class MyNavigationController: UINavigationController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return self.topViewController.preferredStatusBarStyle()

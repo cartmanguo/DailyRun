@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import SlideMenuControllerSwift
 import SWRevealViewController
 class ViewController: UIViewController,CLLocationManagerDelegate{
 
@@ -37,9 +36,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         }
-        
+        locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -55,7 +54,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
             todayRecordLabel.text = "你今天还没有跑步哦ˇ﹏ˇ."
             smileIcon.image = UIImage(named: "Sad")
         }
-        locationManager.startUpdatingLocation()
         distanceLabel.format = "%.1f"
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jds-ME-mwt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jds-ME-mwt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -449,7 +449,7 @@
                                 <rect key="frame" x="5" y="367" width="310" height="193"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth ">
                                         <integer key="value" value="1"/>
@@ -526,22 +526,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mkv-xu-goV" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="mkv-xu-goV" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mkv-xu-goV" id="EbP-BL-6cD">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="ham-j1-yjD" kind="custom" identifier="Home" customClass="SWRevealViewControllerSeguePushController" id="iUb-NQ-OgL"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mMf-Qz-7TD" userLabel="Menu Cell" customClass="MenuCell" customModule="DailyRun" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mMf-Qz-7TD" id="mok-Nw-dJ2">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="gZj-Lf-giL" kind="custom" identifier="Records" customClass="SWRevealViewControllerSeguePushController" id="DWk-b7-fkm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -552,6 +543,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="gZj-Lf-giL" kind="custom" identifier="RecordsNav" customClass="SWRevealViewControllerSeguePushController" id="v2a-3O-2W0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxf-Za-WEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -653,11 +647,14 @@
         <!--My Navigation Controller-->
         <scene sceneID="g0c-wb-PV8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZj-Lf-giL" customClass="MyNavigationController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RecordsNav" automaticallyAdjustsScrollViewInsets="NO" id="gZj-Lf-giL" customClass="MyNavigationController" customModule="DailyRun" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="af8-AQ-jh2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

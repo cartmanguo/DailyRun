@@ -7,30 +7,29 @@
 //
 
 import UIKit
-
+let test = "5j1znBVAsnSf5xQyNQyq"
 class AqiReporter: NSObject {
     class func requestAqiLevelForCity(cityName:String, success:(data:AqiObject)->(),failed:(err:NSError)->())
     {
-        var url = "http://apis.baidu.com/apistore/aqiservice/aqi"
-        var requestUrl = String(format: "%@?city=%@", url,cityName)
+        var url = "http://www.pm25.in/api/querys/pm2_5.json"
+        var requestUrl = String(format: "%@?city=%@&token=%@&stations=no", url,cityName,test)
         requestUrl = requestUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         var req = NSMutableURLRequest(URL: NSURL(string: requestUrl)!)
         req.timeoutInterval = 6
         req.HTTPMethod = "GET"
-        req.addValue("6a4a0df109ab1a4c4a6f3fbb4451a47b", forHTTPHeaderField: "apikey")
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         let dataTask = session.dataTaskWithRequest(req, completionHandler: {(data,response,err) in
             if err == nil
             {
-                let json = JSON(data:data)["retData"]
+                let json = JSON(data:data)[0]
                 let aqi = json[aqiKey].intValue
                 let city = json[cityKey].stringValue
                 let level = json[levelKey].stringValue
                 let aqiIcon = self.aqiIconForAqiQuality(aqi)
                 let aqiObj = AqiObject(aqi: aqi, level: level, city: city, aqiIcon: aqiIcon)
                 success(data: aqiObj)
-                println(json)
+                println("json:\(json)")
             }
             else
             {

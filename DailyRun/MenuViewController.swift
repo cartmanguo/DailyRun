@@ -61,9 +61,6 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        println("Selected row: \(indexPath.row)")
-        
         if (indexPath.row == selectedMenuItem) {
             return
         }
@@ -78,7 +75,7 @@ class MenuViewController: UITableViewController {
             performSegueWithIdentifier("Home", sender: nil)
             break
         case 1:
-            performSegueWithIdentifier("Records", sender: nil)
+            performSegueWithIdentifier("RecordsNav", sender: nil)
             break
         default:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4") as! UIViewController

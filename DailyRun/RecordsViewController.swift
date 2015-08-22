@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 class RecordsViewController: UITableViewController {
     override func viewDidLoad() {
         self.title = "运动记录"
@@ -27,11 +26,6 @@ class RecordsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(RunData.allObjects().count)
-    }
-    
-    func toggleMenu()
-    {
-        self.slideMenuController()?.openLeft()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
