@@ -28,7 +28,7 @@ class DetailViewController: UIViewController,UITextViewDelegate {
         noteTextView.placeholder = "说两句感想嘛:"
         noteTextView.placeholderColor = UIColor.lightGrayColor()
         self.navigationItem.hidesBackButton = true
-        self.navigationController?.interactivePopGestureRecognizer.enabled = false
+        self.navigationController?.interactivePopGestureRecognizer!.enabled = false
         let closeBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "finishRunning")
         navigationItem.rightBarButtonItem = closeBarButton
         loadMap()
@@ -72,17 +72,17 @@ class DetailViewController: UIViewController,UITextViewDelegate {
     }
     
     func configureView() {
-        var distanceText = String(format: "%.2f",runData!.distance)+"公里"
-        var attributedDistanceText = NSMutableAttributedString(string: distanceText)
-        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir Heavy", size: 50)!, range: NSMakeRange(0, count(distanceText)-2))
-        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(17), range: NSMakeRange(count(distanceText)-2,2))
+        let distanceText = String(format: "%.2f",runData!.distance)+"公里"
+        let attributedDistanceText = NSMutableAttributedString(string: distanceText)
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir Heavy", size: 50)!, range: NSMakeRange(0, distanceText.characters.count-2))
+        attributedDistanceText.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(17), range: NSMakeRange(distanceText.characters.count-2,2))
         paceLabel.text = "配速:" + String(format: "%.2f", runData!.pace)
         distanceLabel.attributedText = attributedDistanceText
         timeLabel.text = "时间:" + runData!.duration.timeFormatted
         dateLabel.text = runData?.date.dateString
-        if count(runData!.note) > 0
+        if runData?.note.characters.count > 0
         {
-            println("\(runData?.note)")
+            print("\(runData?.note)")
             noteTextView.text = runData?.note
         }
     }
@@ -123,12 +123,7 @@ class DetailViewController: UIViewController,UITextViewDelegate {
 
 // MARK: - MKMapViewDelegate
 extension DetailViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if !overlay.isKindOfClass(MKPolyline)
-        {
-            return nil
-        }
-        println("poly")
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let polyLine = overlay as! MKPolyline
         let renderer = MKPolylineRenderer(polyline: polyLine)
         renderer.strokeColor = UIColor.greenColor()

@@ -14,7 +14,7 @@ extension Int
         let seconds = self % 60;
         let minutes = (self / 60) % 60;
         let hours = self / 3600;
-        return NSString(format: "%02d:%02d:%02d", hours, minutes, seconds) as! String
+        return NSString(format: "%02d:%02d:%02d", hours, minutes, seconds) as String
     }
 
 }

@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 0/255, green: 100/255, blue: 255/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         // Override point for customization after application launch.
+        if(NSUserDefaults.standardUserDefaults().objectForKey("weather_info") != nil)
+        {
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("weather_info")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         return true
     }
 

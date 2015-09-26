@@ -78,7 +78,7 @@ class MenuViewController: UITableViewController {
             performSegueWithIdentifier("RecordsNav", sender: nil)
             break
         default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4") as! UIViewController
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController4")
             break
         }
     }

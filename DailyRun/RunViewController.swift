@@ -127,13 +127,13 @@ class RunViewController: UIViewController,CountDownDelegate{
     func update()
     {
         duration++
-        let hkSecondsQuantity = HKQuantity(unit: HKUnit.secondUnit(), doubleValue: Double(duration))
+        //let hkSecondsQuantity = HKQuantity(unit: HKUnit.secondUnit(), doubleValue: Double(duration))
         timeLabel.text = "时间:" + duration.timeFormatted
         let mileDistance = distance/1000
-        let hkDistanceQuantity = HKQuantity(unit: HKUnit.mileUnit(), doubleValue: mileDistance)
+        //let hkDistanceQuantity = HKQuantity(unit: HKUnit.mileUnit(), doubleValue: mileDistance)
         distanceLabel.text = String(format: "%.2f", mileDistance) + "公里"
         
-        let paceUnit = HKUnit.secondUnit().unitDividedByUnit(HKUnit.meterUnit())
+        //let paceUnit = HKUnit.secondUnit().unitDividedByUnit(HKUnit.meterUnit())
         let pace = distance/Double(duration)
         var pacePerKilometers:Double = 0.0
         if pace == 0
@@ -144,7 +144,7 @@ class RunViewController: UIViewController,CountDownDelegate{
         {
             pacePerKilometers = 1000/pace/60
         }
-        let hkPaceQuantity = HKQuantity(unit: paceUnit, doubleValue: pace)
+        //let hkPaceQuantity = HKQuantity(unit: paceUnit, doubleValue: pace)
         paceLabel.text = "配速:" + String(format: "%.2f",pacePerKilometers)
     }
     
@@ -159,8 +159,8 @@ class RunViewController: UIViewController,CountDownDelegate{
 
 extension RunViewController:CLLocationManagerDelegate
 {
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let latest = locations.last as! CLLocation
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latest = locations.last as CLLocation!
         if (latest.horizontalAccuracy < 0)
         {
             // No Signal
@@ -181,37 +181,33 @@ extension RunViewController:CLLocationManagerDelegate
             // Full Signal
             signalView.image = UIImage(named: "Gps_Good")
         }
-        
+
     }
 }
 
 extension RunViewController: MKMapViewDelegate
 {
-    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         if startRunning
         {
             if self.locations.count > 0
             {
-                distance += userLocation.location.distanceFromLocation(self.locations.last)
+                distance += userLocation.location!.distanceFromLocation(self.locations.last!)
                 var coords = [CLLocationCoordinate2D]()
                 coords.append(self.locations.last!.coordinate)
-                coords.append(userLocation.location.coordinate)
+                coords.append(userLocation.location!.coordinate)
                 
-                let region = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 500, 500)
+                let region = MKCoordinateRegionMakeWithDistance(userLocation.location!.coordinate, 500, 500)
                 mapView.setRegion(region, animated: true)
                 
                 mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
             }
-            self.locations.append(userLocation.location)
+            self.locations.append(userLocation.location!)
         }
 
     }
     
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if !overlay.isKindOfClass(MKPolyline) {
-            return nil
-        }
-        
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {        
         let polyline = overlay as! MKPolyline
         let renderer = MKPolylineRenderer(polyline: polyline)
         renderer.strokeColor = UIColor.blueColor()

@@ -29,9 +29,9 @@ class CountDownView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         numLabel = UILabel(frame: UIScreen.mainScreen().bounds)
-        println(numLabel?.frame)
+        print(numLabel?.frame)
         numLabel?.textAlignment = NSTextAlignment.Center
         numLabel?.backgroundColor = UIColor.blackColor()
         numLabel?.alpha = 0.7

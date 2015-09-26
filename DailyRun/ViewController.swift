@@ -29,6 +29,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
         RunDataManager.sharedInstance.todayRecord()
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.distanceFilter = 1000.0
         if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
         {
             locationManager.requestAlwaysAuthorization()
@@ -57,11 +59,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
         distanceLabel.format = "%.1f"
     }
     
-    @IBAction func toggleMenu(sender: AnyObject)
-    {
-        //self.slideMenuController()?.openLeft()
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         locationManager.stopUpdatingLocation()
@@ -69,15 +66,31 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
     
     func getWeather(city:String)
     {
-        WeatherReporter.requestForWeatherForCity(city, success: {(data:WeatherObject) in
-            dispatch_async(dispatch_get_main_queue(), {() in
-                self.tempLabel.text = "当前温度:"+String(format: "%d", data.currentTemp!)+"℃"
-                self.todayTempLabel.text = "今天"+String(data.highTemp!) + " / " + String(data.lowTemp!)+"℃"
-                self.weatherIconView.image = data.weatherIcon
+        if ((NSUserDefaults.standardUserDefaults().objectForKey("weather_info")) != nil)
+        {
+            print("save local")
+            let data = NSUserDefaults.standardUserDefaults().objectForKey("weather_info") as! [String:Int]
+            self.tempLabel.text = "当前温度:" + String(format: "%d", data[currentTempKey]!)+"℃"
+            self.todayTempLabel.text = "今天" + String(data[highTempKey]!) + " / " + String(data[lowTempKey]!)+"℃"
+            self.weatherIconView.image = WeatherReporter.weatherIconForWeatherID(data[weatherIDKey]!)
+        }
+        else
+        {
+            print("ask for weather")
+            WeatherReporter.requestForWeatherForCity(city, success: {(data:WeatherObject) in
+                dispatch_async(dispatch_get_main_queue(), {() in
+                    self.tempLabel.text = "当前温度:"+String(format: "%d", data.currentTemp!)+"℃"
+                    self.todayTempLabel.text = "今天"+String(data.highTemp!) + " / " + String(data.lowTemp!)+"℃"
+                    self.weatherIconView.image = data.weatherIcon
+                    let weatherInfo = [currentTempKey:data.currentTemp!,highTempKey:data.highTemp!,lowTempKey:data.lowTemp!,weatherIDKey:data.weatherID!]
+                    NSUserDefaults.standardUserDefaults().setObject(weatherInfo, forKey: "weather_info")
+                    NSUserDefaults.standardUserDefaults().synchronize()
                 })
-            
-             }, failed: {(err) in
-        })
+                
+                }, failed: {(err) in
+            })
+
+        }
     }
     
     func getAqi(city:String)
@@ -93,26 +106,33 @@ class ViewController: UIViewController,CLLocationManagerDelegate{
 
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("update")
         locationManager.stopUpdatingLocation()
-        let latest = locations.last as! CLLocation
+        let latest = locations.last as CLLocation!
         let geo = CLGeocoder()
         geo.reverseGeocodeLocation(latest, completionHandler: {(placemarks,err) in
             if placemarks != nil
             {
-                let placemark = placemarks.first as! CLPlacemark
-                var city = placemark.locality as NSString
-                city = city.substringToIndex(city.length-1)
-                self.getWeather(city as String)
-                self.getAqi(city as String)
-                self.cityLabel.text = placemark.locality
-                self.locationManager.stopUpdatingLocation()
+                let placemark = placemarks!.first as CLPlacemark!
+                let locality = placemark.locality as NSString?
+                if let city = locality
+                {
+                    print("\(city)")
+                    let cityWithoutLastWord = city.substringToIndex(city.length-1)
+                    self.getWeather(cityWithoutLastWord as String)
+                    self.getAqi(cityWithoutLastWord as String)
+                    self.cityLabel.text = placemark.locality
+                    self.locationManager.stopUpdatingLocation()
+
+                }
             }
             else
             {
-                self.locationManager.startUpdatingLocation()
+                //self.locationManager.startUpdatingLocation()
             }
         })
+
     }
     
     override func didReceiveMemoryWarning() {

@@ -19,7 +19,7 @@ class WeatherReporter: NSObject {
         let dataTask = session.dataTaskWithRequest(request, completionHandler: {(data,response,err) in
             if err == nil
             {
-                let json = JSON(data:data)
+                let json = JSON(data:data!)
                 let cityCode = json["retData"]["cityCode"].string
                 //println("\(json)")
                 requestUrl = String(format: weatherUrlBase, cityCode!)
@@ -30,33 +30,32 @@ class WeatherReporter: NSObject {
                 let dataTask = session.dataTaskWithRequest(request, completionHandler: {(data,response,err) in
                     if err == nil
                     {
-                        let json = JSON(data:data)
-                        //println("\(json)")
+                        let json = JSON(data:data!)
                         let currentTemp = json["result"][currentTempKey].intValue
                         let highTemp = json["result"][highTempKey].intValue
                         let lowTemp = json["result"][lowTempKey].intValue
                         let weatherID = json["result"][weatherIDKey].intValue
                         let weatherIcon = self.weatherIconForWeatherID(weatherID)
-                        let weather = WeatherObject(currentTemp: currentTemp, highTemp: highTemp, lowTemp: lowTemp,weatherIcon:weatherIcon!)
+                        let weather = WeatherObject(currentTemp: currentTemp, highTemp: highTemp, lowTemp: lowTemp,weatherIcon:weatherIcon!,weatherID:weatherID)
                         success(data: weather)
                     }
                     else
                     {
-                        failed(err: err)
+                        failed(err: err!)
                     }
                 })
                 dataTask.resume()
             }
             else
             {
-                println("failed")
-                failed(err: err)
+                print("failed")
+                failed(err: err!)
             }
         })
         dataTask.resume()
     }
     
-    private class func weatherIconForWeatherID(weatherID:Int)->UIImage?
+    class func weatherIconForWeatherID(weatherID:Int)->UIImage?
     {
         switch weatherID
         {

@@ -29,14 +29,31 @@ class RunDataManager: NSObject {
         let realm = RLMRealm.defaultRealm()
         realm.beginWriteTransaction()
         realm.addObject(runData)
-        realm.commitWriteTransaction()
+        do
+        {
+            try realm.commitWriteTransaction()
+
+        }
+        catch
+        {
+            
+        }
     }
     
     func updateRunData(runData:RunData)
     {
         let realm = RLMRealm.defaultRealm()
         realm.beginWriteTransaction()
-        realm.commitWriteTransaction()
+        do
+        {
+            try realm.commitWriteTransaction()
+            
+        }
+        catch
+        {
+            
+        }
+
     }
     
     func beginTransaction()
@@ -46,7 +63,16 @@ class RunDataManager: NSObject {
     
     func endTransaction()
     {
-        realm.commitWriteTransaction()
+        do
+        {
+            try realm.commitWriteTransaction()
+            
+        }
+        catch
+        {
+            
+        }
+
     }
     
     func totalMiles()->CGFloat
